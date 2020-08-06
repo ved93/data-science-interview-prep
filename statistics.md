@@ -10,4 +10,34 @@ A. There are few ways to answer this question:
 
 If we use just fixed p-value threshold, then it might results into p-value hacking. To work around them we can calculate effect size separately.
 
+---
+Q. A coin was flipped 1000 times, and 560 times it showed up heads. Do you think the coin is biased? Why or why not?(Google)
 
+A. The variance for # of heads in 1000 flips of a fair coin would be (0.5)(1–0.5)(1000) = 250 and the standard deviation is the square root of the variance: √250 = 15.81+. And of course the mean would be (0.5)(1000) = 500.
+
+So 560 is (560–500)/15.81 = +3.794… standard deviations.
+
+A 95% confidence interval is ±1.96 standard deviations, which would be ±30.99 or between 469.01 and 530.99. So 560 heads is a BIG outlier. The coin probably is biased.
+
+On the other hand, 56 heads in 100 trials - the same proportion with a smaller sample - would only be +1.2 standard deviations (mean is 50, standard deviation is 5.) So that would be too small of a sample to conclude that the coin is biased.
+
+---
+Q. Uber. Say you need to produce a binary classifier for fraud detection. What metrics would you look at, how is each defined, and what is the interpretation of each one?
+
+A. I have worked a bit in the fraud domain, and we definitely look at ROC AUC as our primary metric. The fact that it's not sensitive to class imbalance can be a feature, not a bug. Consider retraining models on a monthly basis, and trying to compare performance across time. PR-AUC will be driven by a combination of model performance and underlying fraud rate, whereas ROC-AUC is robust to variable fraud rate.
+
+Second, the business typically makes a decision based on the impact to good customers, or in other words, FPR. Then, the important question becomes: at this given FPR, how much of the fraud am I capturing? This is precisely what the ROC curve tells us. Also note the host said they care more about partial ROC AUC, and this is likely for the same reason: they care about very low FPR, so only the area under this section of the curve is most relevant.
+
+That said, if you instead have a model that's evaluating e.g. every hour and sending accounts for human investigation, then your primary bottle-neck is investigator bandwidth, and in this case, you might focus on Precision/Recall metrics as you will likely have a target precision.
+
+---
+Q. Facebook.Imagine the social graphs for both Facebook and Twitter. How do they differ? What metric would you use to measure how skewed the social graphs are?
+
+A. First you should recognize that Twitter is *following* vs. a FB friendship (connections are 2-way street). Second part has to do with comparing the "equality" of Twitter vs FB social graph. In TW, you have a small % with a TON of connections (and then a long tail), and FB you have a much less extreme version of that. Think how you would plot out distribution of connections per user and how FB/TW are different.
+
+---
+Q. What does it mean for an estimator to be unbiased? What about consistent? Give examples of an unbiased but not consistent estimator, as well as a biased but consistent estimator.
+
+A. https://stats.stackexchange.com/questions/31036/what-is-the-difference-between-a-consistent-estimator-and-an-unbiased-estimator
+
+---
