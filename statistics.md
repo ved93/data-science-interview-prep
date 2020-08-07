@@ -41,3 +41,16 @@ Q. What does it mean for an estimator to be unbiased? What about consistent? Giv
 A. https://stats.stackexchange.com/questions/31036/what-is-the-difference-between-a-consistent-estimator-and-an-unbiased-estimator
 
 ---
+Q. There are two games involving dice that you can play. In the first game, you roll two die at once and get the dollar amount equivalent to the product of the rolls. In the second game, you roll one die and get the dollar amount equivalent to the square of that value. Which has the higher expected value and why?
+
+A. 
+
+---
+Q. Google. Say you are running a multiple linear regression and believe there are several predictors that are correlated. How will the results of the regression be affected if they are indeed correlated? How would you deal with this problem?
+
+A. Interpretability of coefficients wont make sense and coefficients will be unstable
+
+---
+Q. Uber.Say you are given a random Bernoulli trial generator. How would you generate values from a standard normal distribution?
+
+A.
