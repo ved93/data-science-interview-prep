@@ -11,5 +11,12 @@ Q. Assume we have some credit model, which has accurately calibrated (up to some
 A. 
 
 ---
-Q. 
+Q. What is user churn and how can you build a model to predict whether a user will churn? What features would you include in the model and how do you assess importance?
+
+---
+Q. Assume we have a classifier that produces a score between 0 and 1 for the probability of a particular loan application behind a fraud. Say that for each application’s score, we take the square root of that score. How would the ROC curve change? If it doesn’t change, what kinds of functions would change the curve?
+
+A. ROC is a ranking metrics so it wont change if you make same transformation for every score.
+
+---
 
