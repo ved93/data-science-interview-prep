@@ -70,3 +70,18 @@ email|string
 signup_date|datetime
 
 A. 
+```
+select city, count(*)
+from trades A left join users B
+on A.user_id = B.user_id
+group by 1
+order by 2 desc
+limit 3
+```
+---
+Q. Assume you take have a stick of length 1 and you break it uniformly at random into three parts. What is the probability that the three parts form a triangle?
+
+A. Search on web
+
+---
+Q. 

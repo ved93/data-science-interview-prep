@@ -7,4 +7,17 @@ A.
 4) Look at the mean average precision of the movies that the users watch out of the rankings. So if out of 10 recommended movies one user prefers the third and the other user prefers the sixth, the recommendation engine of the user who preferred the third would be better.
 
 
-Q. 
+Q. How can you decide how long to run an experiment? What are some problems with just using a fixed p-value threshold and how do you work around them?
+
+A. https://www.optimizely.com/sample-size-calculator/
+
+https://www.experimentcalculator.com/
+
+https://help.optimizely.com/Analyze_Results/How_long_to_run_an_experiment
+
+Q. Uber. You’re on the data science team and are responsible for figuring out surge pricing. Why does it need to exist and what metrics and data should you track?
+
+A. It needs to exist to balance the demand-supply  
+ equation. Surge pricing motivates driver to go the   surge areas hence results in balancing the supply in high demand area. We need to track conversions in surge price points.
+
+
