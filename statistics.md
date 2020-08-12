@@ -54,3 +54,7 @@ A. Interpretability of coefficients wont make sense and coefficients will be uns
 Q. Uber.Say you are given a random Bernoulli trial generator. How would you generate values from a standard normal distribution?
 
 A.
+
+---
+Q. What are MLE and MAP? What is the difference between the two?  
+A. 
