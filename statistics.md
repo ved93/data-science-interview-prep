@@ -57,4 +57,5 @@ A.
 
 ---
 Q. What are MLE and MAP? What is the difference between the two?  
-A. 
+A. [Check here](https://www.quora.com/What-is-the-difference-between-Maximum-Likelihood-ML-and-Maximum-a-Posteriori-MAP-estimation)
+
