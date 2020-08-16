@@ -79,9 +79,16 @@ order by 2 desc
 limit 3
 ```
 ---
-Q. Assume you take have a stick of length 1 and you break it uniformly at random into three parts. What is the probability that the three parts form a triangle?
-
+Q. Assume you take have a stick of length 1 and you break it uniformly at random into three parts. What is the probability that the three parts form a triangle?  
 A. Search on web
 
 ---
+Q. Find the cumulative sum of top 10 most profitable products of the last 6 month for customers in Seattle.  
+``` 
+select month(txn_date), sum(sum) over (partition by month(txn_date order by 1) )
+from  table 
+where product in (select product from table where  group by 1 order by sum(sale) desc limit 10)
+and city = 'Seattle'
+```
+
 Q. 
