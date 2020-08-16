@@ -38,3 +38,5 @@ Q. How many cards would you expect to draw from a standard deck before seeing th
 A. https://math.stackexchange.com/questions/245354/expected-value-of-sums
 
 
+Q. Estimate the disease probability in one city given the probability is very low national wide. Randomly asked 1000 person in this city, with all negative response(NO disease). What is the probability of disease in this city?   
+Q. 

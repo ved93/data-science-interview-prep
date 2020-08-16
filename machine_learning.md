@@ -20,3 +20,29 @@ A. ROC is a ranking metrics so it wont change if you make same transformation fo
 
 ---
 
+Q.Difference between convex and non-convex cost function; what does it mean when a cost function is non-convex?(Amazon)  
+
+Q. Describe the criterion for a particular model selection. Why is dimension reduction important?
+
+Q.What are the assumptions for logistic and linear regression?
+
+Q.If you can build a perfect (100% accuracy) classification model to predict some customer behaviour, what will be the problem in application?  
+A. There can be multiple scenarios  
+1. target-rate < 1% : If its fraud application. Then model might of no use.
+2. Overfitting: It's highly difficult to build such model. So if its not validated well then it might not do well on test data
+
+Q. Compare Lasso and Ridge Regression. (Amazon) 
+Q. What’s the difference between MLE and MAP inference?(Amazon)  
+Q. When users are navigating through the Amazon website, they are performing several actions. What is the best way to model if their next action would be a purchase?  
+Q.How does K-means work? What kind of distance metric would you choose? What if different features have different dynamic range?
+Q. What are some benefits and drawbacks of discriminative and generative models?  
+Q. Difference between convex and non-convex cost function ; what does it mean when a cost function is non-convex?  
+A. Convex: global optimum no local optimum
+
+Q. why should we retrain the model after model selection / model evaluation?   
+In a learning curve, the performance of a model both on the training and validation set is plotted as a function of the training set size. Fig. 1 shows a typical learning curve: The training score (performance on the training set) decreases with increasing training set size while the validation score increases at the same time. High training score and low validation score at the same time indicates that the model has overfit the data, i.e., has adapted too well to the specific training set samples. As the training set increases, overfitting decreases, and the validation score increases.
+Especially for data-hungry machine learning models, the learning curve might not yet have reached a plateau at the given training set size, which means the generalization error might still decrease when providing more data to the model. Hence, it seems reasonable to increase the training set (by adding the validation set) before estimating the generalization error on the test set, and to further take advantage of the test set data for model fitting before shipping the model. Whether or not this strategy is needed depends strongly on the slope of the learning curve at the initial training set size.
+
+Q. Bias Variance in Learning Curve  
+A. Learning curves further allow to easily illustrate the concept of (statistical) bias and variance. Bias in this context refers to erroneous (e.g. simplifying) model assumptions, which can cause the model to underfit the data. A high-bias model does not adequately capture the structure present in the data. Variance on the other hand quantifies how much the model varies as we change the training data. A high-variance model is very sensitive to small fluctuations in the training data, which can cause the model to overfit. The amount of bias and variance can be estimated using learning curves: A model exhibits high variance, but low bias if the training score plateaus at a high level while the validation score at a low level, i.e., if there is a large gap between training and validation score. A model with low variance but high bias, in contrast, is a model where both training and validation score are low, but similar. Very simple models are high-bias, low-variance while with increasing model complexity they become low-bias, high-variance.
+
