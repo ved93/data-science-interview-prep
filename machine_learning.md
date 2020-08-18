@@ -46,3 +46,9 @@ Especially for data-hungry machine learning models, the learning curve might not
 Q. Bias Variance in Learning Curve  
 A. Learning curves further allow to easily illustrate the concept of (statistical) bias and variance. Bias in this context refers to erroneous (e.g. simplifying) model assumptions, which can cause the model to underfit the data. A high-bias model does not adequately capture the structure present in the data. Variance on the other hand quantifies how much the model varies as we change the training data. A high-variance model is very sensitive to small fluctuations in the training data, which can cause the model to overfit. The amount of bias and variance can be estimated using learning curves: A model exhibits high variance, but low bias if the training score plateaus at a high level while the validation score at a low level, i.e., if there is a large gap between training and validation score. A model with low variance but high bias, in contrast, is a model where both training and validation score are low, but similar. Very simple models are high-bias, low-variance while with increasing model complexity they become low-bias, high-variance.
 
+Q. Why is logistic regression considered a linear model?  
+A. Logistic regression is considered linear because the decision boundary of a logistic model is linear in the feature space. Logistic regression is considered a generalized linear model because the outcome always depends on the sum of the inputs and parameters. Or in other words, the output cannot depend on the product (or quotient, etc.) of its parameters!  
+Logistic regression is a *generalized linear model*. Generalized linear models are, despite their name, not generally considered linear models. They have a linear component, but the model itself is nonlinear due to the nonlinearity introduced by the link function.
+
+
+

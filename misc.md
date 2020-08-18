@@ -1,5 +1,11 @@
-Q. 
-
+Q. The probability that item an item at location A is 0.6, and 0.8 at location B. What is the probability that item would be found on Amazon website?   
+```
+P(A or B) = P(A) + P(B) — P(A and B)
+P(A or B) = 0.6 + 0.8 - (0.6*0.8)
+P(A or B) = 0.92
+```
+Q: What is boosting?  
+Boosting is an ensemble method to improve a model by reducing its bias and variance, ultimately converting weak learners to strong learners. The general idea is to train a weak learner and sequentially iterate and improve the model by learning from the previous learner. 
 
 
 
