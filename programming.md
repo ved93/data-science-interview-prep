@@ -28,3 +28,11 @@ a_dct = defaultdict(str)   # The Default Value is ""
 d = defaultdict(lambda : 100)
  ```
 Q. Given a function with inputs — an array with N randomly sorted numbers, and an int K, return output in an array with the K largest numbers.
+
+Q. check empty list  
+```
+if not list:
+    print('its empty')
+
+```
+
