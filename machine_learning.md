@@ -50,5 +50,7 @@ Q. Why is logistic regression considered a linear model?
 A. Logistic regression is considered linear because the decision boundary of a logistic model is linear in the feature space. Logistic regression is considered a generalized linear model because the outcome always depends on the sum of the inputs and parameters. Or in other words, the output cannot depend on the product (or quotient, etc.) of its parameters!  
 Logistic regression is a *generalized linear model*. Generalized linear models are, despite their name, not generally considered linear models. They have a linear component, but the model itself is nonlinear due to the nonlinearity introduced by the link function.
 
+Q. You have a dataset of a million example digits, what are some desirable qualities due to which you would pick a KNN classifier for digit recognition ?  
+A. Lavanya.The following are some features of the KNN classifier The KNN classifier is simple to implement. Prediction could be relatively inefficient with the KNN classifier. While there is no training effort with the KNN algorithm, prediction involves scanning the entire training data to find the K-nearest neighbours to aggregate their value. With efficient implementation, such as a KD-tree the prediction time could be improved. With a high value of K, the decision boundary becomes smoother while the decision boundary is more noisy with a low value of K. The KNN-algorithm is non-parametric and can fit highly non-linear decision boundaries.
 
 

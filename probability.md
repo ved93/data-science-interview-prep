@@ -39,4 +39,58 @@ A. https://math.stackexchange.com/questions/245354/expected-value-of-sums
 
 
 Q. Estimate the disease probability in one city given the probability is very low national wide. Randomly asked 1000 person in this city, with all negative response(NO disease). What is the probability of disease in this city?   
-Q. 
+
+Q.Suppose it is 8:00 AM and a flight is expected to land around then. The announcement says that the expected time to land anytime between 8:00 AM and 9:00 AM with uniform probability. You want to draw a plot of the probability of the flight landing before specific time t (Where t is some value between 8:00 AM and 9:00 AM). i.e t is on the X axis and the probability of the flight landing before t is on the Y axis.
+What are some properties of this plot ?  
+A. Note that the random variable corresponding to the time of the landing of the flight is a continuous random variable taking values between 8:00 AM and 9:00 AM.
+
+The probability of the flight landing before a certain time is modelled by the cumulative distribution function. The CDF of a uniform distribution is a (a) continuous (b) non decreasing function.
+
+Note that the CDF is 0 before 8AM and 1 after 9AM. You can interpret this as follows : The probability that the flight lands before 9:00 AM or any time after 9:00 AM is 1.
+
+Also note that for a uniform distribution, the CDF is a straight line with an increasing slope.
+
+
+Q. Suppose you are trying to determine the bias (p) of a coin. You model the outcome of a coin toss using the Bernoulli distribution with parameter p (probability of heads also called bias). p has a beta prior beta(1,1) which is similar to a uniform distribution from 0 to 1. You now compute the posterior after looking at 1000 tosses out of which 502 are heads and 498 are tails. Which of the following could be the posterior estimate of p ?
+A. Lavanya. Before observing the data, we have a uniform prior on p between 0 and 1, which is means if we were to pick a value for p, 0.5 is the most meaningful value. Further a beta(1,1) is a rather uninformative weak prior, which means the posterior is heavily influenced by the 1000 data points and only mildly influenced by the prior.
+
+Hence, after observing 502 heads and 498 tails, we would expect the posterior estimate (mean of the posterior) to be close to 502/1000. The precise value would be (502+1)/(498+1) which can be rounded off to .502
+
+Take a look at the following link for more information : https://towardsdatascience.com/visualizing-beta-distribution-7391c18031f1
+
+
+Q. prob of getting 3 heads in a sequence when a fair coin is tossed 5 times  
+A. 
+```
+Total number of possible events = 2^5 = 32
+Frequency of exactly 3 heads (HHHT*, THHHT, *THHH) = 2+1+2 = 5
+Frequency of exactly four consecutive heads (HHHHT, THHHH) = 2
+Frequency of five consecutive heads = 1
+Frequency of required events = 5+2+1 = 8
+Required probability = 8/32 = 1/4
+```
+https://www.quora.com/What-is-the-probability-of-getting-5-consecutive-heads-in-10-tosses-of-a-fair-coin
+
+Q. An exit poll in an election is a survey taken of voters just after they have voted. One major use of exit polls has been so that news organizations can try to figure out as soon as possible who won the election, before the votes are officially counted. This has been notoriously inaccurate in various elections, sometimes because of selection bias: the sample of people who are invited to and agree to participate in the survey may not be similar enough to the overall population of voters.
+
+Consider an election with two candidates, Candidate A and Candidate B. Every voter is invited to participate in an exit poll, where they are asked whom they voted for; some accept and some refuse. For a randomly selected voter, let  𝐴  be the event that they voted for A, and  𝑊  be the event that they are willing to participate in the exit poll. Suppose that  𝑃(𝑊|𝐴)=0.7  but  𝑃(𝑊|𝐴𝑐)=0.3 . In the exit poll,  60%  of the respondents say they voted for A (assume that they are all honest), suggesting a comfortable victory for A. Find  𝑃(𝐴) , the true proportion of people who voted for A.  
+A. 
+
+Q. Probability :Knock Out Tournament Of Ranked Players  
+https://math.stackexchange.com/questions/1569352/probability-knock-out-tournament-of-ranked-players   
+
+Q. Eight players P1,P2,..........P8 play a knockout tournament. It is known that whenever the players Pi and Pj play , the player Pi will win if i<j.
+Assuming that the players are paired at random in each round, what is the probability that the players P4 reaches the final?  
+A. https://www.toppr.com/ask/question/eight-players-p1-p2-p3-p8-play-a-knockout-tournament-it-is-known/
+
+
+Q. https://math.stackexchange.com/questions/2757101/knockout-tournament-probability
+https://math.stackexchange.com/questions/378084/a-probability-problem-involving-a-tournament
+https://math.stackexchange.com/questions/911296/probability-in-a-knock-out-tournament  
+https://doubtnut.com/ncert-solutions/class-12-maths-chapter-13-probability-1   
+https://doubtnut.com/ncert-solutions/class-12-maths-chapter-12-linear-programming-1  
+https://www.youtube.com/c/MathSolutionsForYou/playlists
+
+
+
+

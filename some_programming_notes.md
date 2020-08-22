@@ -10,7 +10,13 @@
 9. Accessing qa func from a class.Then use self.func
 10. If you need to count ways then think of dp and recursion
 11. Revisit Binary search algo and think about use-cases. Two pointer method
-12. 
+12. two sum problem's 2 pointer solution is good. Implement by yourself bcz it has details whihc you tend to ignore if you dont implement gtourself.
+13. If you are repeatedly partitioning your data by some factor, timecomplexity is going to be log n. i.e. 
+    ```
+    for i in range(0,n,step = 2*i):
+    ```
+    Time Complexity of a loop is considered as O(Logn) if the loop variables is divided / multiplied by a constant amount.
+14.  
 
 
 
@@ -28,5 +34,7 @@
 5. [Dynamic Programming pattern](https://leetcode.com/discuss/general-discussion/458695/dynamic-programming-patterns)
 6. https://leetcode.com/problems/house-robber/discuss/156523/From-good-to-great.-How-to-approach-most-of-DP-problems.
 7. https://leetcode.com/problems/longest-palindromic-subsequence/discuss/222605/dp-problem-classifications-helpful-notes
+8. https://softwareengineering.stackexchange.com/questions/146021/determining-if-an-algorithm-is-o-log-n
+9. 
 
 

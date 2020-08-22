@@ -64,3 +64,17 @@ Q.
 A. https://www.quora.com/Can-you-explain-intuitively-or-with-an-example-why-the-gradient-points-to-the-direction-of-steepest-ascent  
 https://betterexplained.com/articles/vector-calculus-understanding-the-gradient/   
 https://www.khanacademy.org/math/multivariable-calculus/multivariable-derivatives/gradient-and-directional-derivatives/v/directional-derivative
+
+Q. what is poisson distribution?  
+A. The Poisson distribution is the discrete probability distribution of the number of events occurring in a given time period, given the average number of times the event occurs over that time period. A certain fast-food restaurant gets an average of 3 visitors to the drive-through per minute.
+The number of cases a doctor can handle in a day is a positive number, this can be modelled by a Poisson distribution.  
+*Additional notes*:
+Normal distribution can be used when we have a real number taking values between negative and positive infinity. Clearly this is not the case for the number of cases taken by a doctor per day.  
+Bernoulli distribution is used to model binary random variables, for instance the result of a coin toss. Hence, it cannot be used to model a random variable that is not binary.
+
+
+Q. You are doing an experiment to determine whether a new coffee recipe you invented, that is more healthy is actually likable by people. You want to make sure people like this coffee atleast as much as the previous coffee by looking at the average rating they give. Which kind of test would make more sense in this setting ?  
+A. If you do a two sided test, your null hypothesis will be, people like the old recipe as much as the newer recipe. If you measure the ratings and compute the p value, you will be in a position to reject the null hypothesis that people like the old recipe as much as the newer one.
+
+With a one sided test, the null hypothesis will be : people like the previous recipe better than the current recipe. If you are able to get an appropriate p value with the adequate sample size, you can conclude that the people do not like the previous coffee more than the current coffee. Note that you still cannot conclude that they like the new one more.
+https://stats.idre.ucla.edu/other/mult-pkg/faq/general/faq-what-are-the-differences-between-one-tailed-and-two-tailed-tests/
