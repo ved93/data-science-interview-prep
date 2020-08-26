@@ -3,6 +3,10 @@ Q. There is a fair coin (one side heads, one side tails) and an unfair coin (bot
 A.  This is good fundamental question. You can solve it using probability.
 
 
+Q2. https://www.toppr.com/ask/question/eight-players-p1-p2-p3-p8-play-a-knockout-tournament-it-is-known/
+
+https://www.openbookpublishers.com/htmlreader/978-1-78374-142-7/Chapters/P65.html#:~:text=It%20is%20organised%20as%20a,start%20of%20the%20%EF%AC%81rst%20round.
+
 Q. Say we have X ~ Uniform(0, 1) and Y ~ Uniform(0, 1). What is the expected value of the minimum of X and Y?(Google)
 
 A. https://www.quora.com/Say-we-have-X-Uniform-0-1-and-Y-Uniform-0-1-What-is-the-expected-value-of-the-minimum-of-X-and-Y
