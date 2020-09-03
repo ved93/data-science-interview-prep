@@ -7,6 +7,18 @@ Q2. https://www.toppr.com/ask/question/eight-players-p1-p2-p3-p8-play-a-knockout
 
 https://www.openbookpublishers.com/htmlreader/978-1-78374-142-7/Chapters/P65.html#:~:text=It%20is%20organised%20as%20a,start%20of%20the%20%EF%AC%81rst%20round.
 
+Q. Balls and Boxes problem. Find number of  ways  
+Five balls are to be placed in three boxes in how many diff. ways can be placed the balls so that no box remains empty if (i) balls and boxes are diff, (ii) balls identical and boxes diff. (iii) balls diff and boxes identical (iv) balls as well as boxes are identical  
+
+https://www.hitbullseye.com/Quant/Permutation-and-Combination-Concept.php
+
+Q. Two persons A and B agree to meet at a place between 11 to 12 noon. The first one to arrive waits for 20 minutes and then leave. if the time of their arrival be independent and at random, then the probabity that A and B meet is  
+A. 
+
+
+
+
+
 Q. Say we have X ~ Uniform(0, 1) and Y ~ Uniform(0, 1). What is the expected value of the minimum of X and Y?(Google)
 
 A. https://www.quora.com/Say-we-have-X-Uniform-0-1-and-Y-Uniform-0-1-What-is-the-expected-value-of-the-minimum-of-X-and-Y
