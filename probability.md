@@ -13,7 +13,12 @@ Five balls are to be placed in three boxes in how many diff. ways can be placed 
 https://www.hitbullseye.com/Quant/Permutation-and-Combination-Concept.php
 
 Q. Two persons A and B agree to meet at a place between 11 to 12 noon. The first one to arrive waits for 20 minutes and then leave. if the time of their arrival be independent and at random, then the probabity that A and B meet is  
-A. 
+A. https://www.quora.com/A-and-B-decide-to-meet-between-1-pm-and-2-pm-on-a-given-day-Whoever-arrives-first-will-not-wait-for-the-other-for-more-than-15-minutes-Whats-the-probability-that-they-will-meet-that-day-and-why/answer/HV-Mishra
+
+https://www.geeksforgeeks.org/probability-that-two-persons-will-meet/
+
+
+Q. Amazon. Expected time to reach earth by demogorgans. There are three paths. One path leads to earth in one day. Other one takes one day and reach at the same spot. third one takes 2 days and reach the same spots.
 
 
 
@@ -105,6 +110,7 @@ https://math.stackexchange.com/questions/911296/probability-in-a-knock-out-tourn
 https://doubtnut.com/ncert-solutions/class-12-maths-chapter-13-probability-1   
 https://doubtnut.com/ncert-solutions/class-12-maths-chapter-12-linear-programming-1  
 https://www.youtube.com/c/MathSolutionsForYou/playlists
+
 
 
 
