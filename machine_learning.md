@@ -5,6 +5,14 @@ A. FP: False predicted fraudulent
 FN: Falsely predicted Non-fraud
 Here, Recall is very important metric here. So model should be weighted for FN. FN are the cases where fraud actually happened but model didn't detect and Bank ended up losing money. So we should choose a model where we can minimise FN at the expense of FP.
 
+Q. Why lasso makes coeficients zero?  
+*Explains Ghraphically*
+https://www.quora.com/Why-is-it-that-the-lasso-unlike-ridge-regression-results-in-coefficient-estimates-that-are-exactly-equal-to-zero
+*Explains Mathematically*
+https://stats.stackexchange.com/questions/176599/why-will-ridge-regression-not-shrink-some-coefficients-to-zero-like-lasso
+
+
+
 ---
 Q. Assume we have some credit model, which has accurately calibrated (up to some error) score of how credit-worthy any individual person is. For example, if the model’s estimate is 92% then we can assume the actual score is between 91 and 93. If we take 92 as a score cutoff and deem everyone above that score as credit-worthy, are we over-estimating or underestimating the actual population’s credit score?
 
