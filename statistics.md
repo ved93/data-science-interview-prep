@@ -57,12 +57,15 @@ A.
 
 ---
 Q. What are MLE and MAP? What is the difference between the two?  
-A. [Check here](https://www.quora.com/What-is-the-difference-between-Maximum-Likelihood-ML-and-Maximum-a-Posteriori-MAP-estimation)
+A. [Check here](https://www.quora.com/What-is-the-difference-between-Maximum-Likelihood-ML-and-Maximum-a-Posteriori-MAP-estimation)  
 
----
-Q.  
-A. https://www.quora.com/Can-you-explain-intuitively-or-with-an-example-why-the-gradient-points-to-the-direction-of-steepest-ascent  
+Q. Why does gradient point the direction of steepest ascent?   
+A. https://www.khanacademy.org/math/multivariable-calculus/multivariable-derivatives/gradient-and-directional-derivatives/v/why-the-gradient-is-the-direction-of-steepest-ascent
+
+https://www.quora.com/Can-you-explain-intuitively-or-with-an-example-why-the-gradient-points-to-the-direction-of-steepest-ascent  
+https://www.quora.com/What-is-an-intuitive-explanation-for-why-the-gradient-points-in-the-direction-of-steepest-ascent  
 https://betterexplained.com/articles/vector-calculus-understanding-the-gradient/   
+https://math.stackexchange.com/questions/223252/why-is-gradient-the-direction-of-steepest-ascent
 https://www.khanacademy.org/math/multivariable-calculus/multivariable-derivatives/gradient-and-directional-derivatives/v/directional-derivative
 
 Q. what is poisson distribution?  
