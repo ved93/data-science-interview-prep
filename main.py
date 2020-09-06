@@ -13,12 +13,17 @@ import os
 _files = os.listdir('.')
 # print(_files)
 
+
+_files.remove('README.md')
 files=[file for file in _files if file.endswith(".md")]
 
 number = random.randint(0, len(files) - 1)
 file_ = files[number]
 
-with open(file_, 'w') as f:
-    f.write("foobar")
+# with open(file_, 'w') as f:
+#     f.write("foobar")
 
-print(os.getcwd())
+# print(os.getcwd())
+print(file_)
+os.system("rm  Today_Challenge.md")
+os.system("cp {}  Today_Challenge.md".format(file_))
