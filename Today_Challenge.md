@@ -1,6 +1,7 @@
 
 Q. Assume you have the below tables on user actions. Write a query to get the active user retention by month.(Facebook)
 
+
 **user_actions**
 column_name |	type|
 --- | --- 
