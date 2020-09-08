@@ -111,6 +111,15 @@ https://doubtnut.com/ncert-solutions/class-12-maths-chapter-13-probability-1
 https://doubtnut.com/ncert-solutions/class-12-maths-chapter-12-linear-programming-1  
 https://www.youtube.com/c/MathSolutionsForYou/playlists
 
+Q. I play a gambling game in which I will win k−2 dollars with probability 12k for any k∈ℕ, that is,  
+with probability 12, I lose 1 dollar;  
+with probability 14, I win 0 dollar;  
+with probability 18, I win 1 dollar;  
+with probability 116, I win 2 dollars;  
+with probability 132, I win 3 dollars;  
+⋯
+What is the probability that I win more than or equal to 1 dollar and less than 4 dollars? What is the probability that I win more than 2 dollars?
+A. https://www.probabilitycourse.com/chapter1/1_3_4_discrete_models.php
 
 
 
