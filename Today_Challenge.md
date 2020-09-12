@@ -1,5 +1,15 @@
 
 
-1. https://www.ritchieng.com/machine-learning-systems-design/
-2. https://www.ritchieng.com/applying-machine-learning/
-3. 
+### Random Forest
+There are 10 students- *# trees*  
+No-one was there for whole year- *sample data*  
+Everyone took different subjects but not all subjects- *# features*   
+
+One question asked
+and we have done majority votes on responses
+
+
+
+
+
+### Logistic Regression
