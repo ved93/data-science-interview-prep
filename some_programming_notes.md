@@ -17,7 +17,10 @@
     for i in range(0,n,step = 2*i):
     ```
     Time Complexity of a loop is considered as O(Logn) if the loop variables is divided / multiplied by a constant amount.
-15.  
+15. There are two ways to use divide and conquer or reducing the problem  
+    1. Use of left and right with while loop 
+    2. Use recursion   
+16. ede 
 
 
 
