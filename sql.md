@@ -91,4 +91,10 @@ where product in (select product from table where  group by 1 order by sum(sale)
 and city = 'Seattle'
 ```
 
-Q. 
+Q. A table with year and yearly sale. Write a query to get previous year sale.  
+```
+select 
+from A
+left join B
+on A.year+1 = B.year
+```

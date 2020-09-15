@@ -36,3 +36,41 @@ if not list:
 
 ```
 
+Q. Asked by Paytm. You have been given two metrics. Write a code to identify if thet are symmetric metrics.  
+A. My soln. Need to refine
+``` 
+mat = np.matrix(2,3,1)
+flag = 0
+for i in range(2,mat.shape[0]):
+    for j in range(1,mat.shape[0]):
+        if mat[i][j] = mat[j][i]:
+            print()
+            flag = 1
+        else:
+            flag =0
+            print('not symmetric')
+        
+if flag == 1:
+    print('symmetric')        
+``` 
+
+Q. Asked by Delhivery. Write a programme to write factorial. Implement both recursion and dynamic programming soln.
+
+Q. Paytm. Count digit's(0-9) occurence in numbers from 1 to 100.  
+```
+store_num = []
+for i in range(1,101):
+    store_num.extend(list(str(i)))
+#     list(str(i))
+Counter(store_num)
+```
+
+
+
+
+
+
+
+
+### Solutions
+
