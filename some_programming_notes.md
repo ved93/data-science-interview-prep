@@ -1,4 +1,6 @@
 
+https://gto76.github.io/python-cheatsheet/
+
 1. Two sum and its different variants are good for multiple problems.  
 2. A quick sort/merge sort have complexity nlogn
 3. If an array is sorted then two-pointer sol is good.

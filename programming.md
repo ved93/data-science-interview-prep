@@ -65,6 +65,29 @@ for i in range(1,101):
 Counter(store_num)
 ```
 
+Q. Ericsson. Write a programme to check two sorted array to merge into one. Just a simple idea.
+```
+# A
+# B
+
+# C= []
+# i = 0
+# j = 0
+
+for k in range(len(A+B)):
+    if A[i] <= B[j]:
+        C[k] = A[i]
+        i= i+1
+    else:
+        C[k] = B[j]
+        j = j+1
+
+    if len(A) <= i:
+        C.append(B[j+1:])
+    if len(B) <= j:
+        C.append(A[i+1:])     
+```
+
 
 
 
