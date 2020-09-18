@@ -1,99 +1,23 @@
-Q. Given a number n, return the number of lists of consecutive positive integers that sum up to n.
-For example, for n = 9, you should return 3 since the lists are: [2, 3, 4], [4, 5], and [9]. Can you do it in linear time?
-
-A. This is tricky problem. Search on leetcode for the solution
-
-
-Q. This problem was asked by Stripe.
-
-Write a program to generate the partitions for a number n. A partition for n is a list of positive integers that sum up to n. For example: if n = 4, we want to return the following partitions: [1,1,1,1], [1,1,2], [2,2], [1,3], and [4]. Note that a partition [1,3] is the same as [3,1] so only the former is included.
-
-Q. why do we use defaultdict?  
-A. A common problem that you can face when working with Python dictionaries is to try to access or modify keys that don’t exist in the dictionary. This will raise a KeyError and break up your code execution. To handle these kinds of situations, the standard library provides the Python defaultdict type, a dictionary-like class that’s available for you in collections.  
-The Python defaultdict type behaves almost exactly like a regular Python dictionary, but if you try to access or modify a missing key, then defaultdict will automatically create the key and generate a default value for it. This makes defaultdict a valuable option for handling missing keys in dictionaries.
+Q. The probability that item an item at location A is 0.6, and 0.8 at location B. What is the probability that item would be found on Amazon website?   
 ```
-# Defining a dict 
-d = defaultdict(list) 
-def_dict['one'] = 1  # Add a key-value pair
-def_dict['missing']  # Access a missing key returns an empty list
-def_dict['another_missing'].append(4)  # Modify a missing key
-
-# Defining the dict 
-# The default value is 0 
-d = defaultdict(int) 
-a_dct = defaultdict(float)   # The Default Value is "0.0"
-a_dct = defaultdict(str)   # The Default Value is ""
-
-# dict with lambda func which returns 100
-d = defaultdict(lambda : 100)
- ```
-Q. Given a function with inputs — an array with N randomly sorted numbers, and an int K, return output in an array with the K largest numbers.
-
-Q. check empty list  
+P(A or B) = P(A) + P(B) — P(A and B)
+P(A or B) = 0.6 + 0.8 - (0.6*0.8)
+P(A or B) = 0.92
 ```
-if not list:
-    print('its empty')
+Q: What is boosting?  
+Boosting is an ensemble method to improve a model by reducing its bias and variance, ultimately converting weak learners to strong learners. The general idea is to train a weak learner and sequentially iterate and improve the model by learning from the previous learner. 
 
-```
-
-Q. Asked by Paytm. You have been given two metrics. Write a code to identify if thet are symmetric metrics.  
-A. My soln. Need to refine
-``` 
-mat = np.matrix(2,3,1)
-flag = 0
-for i in range(2,mat.shape[0]):
-    for j in range(1,mat.shape[0]):
-        if mat[i][j] = mat[j][i]:
-            print()
-            flag = 1
-        else:
-            flag =0
-            print('not symmetric')
-        
-if flag == 1:
-    print('symmetric')        
-``` 
-
-Q. Asked by Delhivery. Write a programme to write factorial. Implement both recursion and dynamic programming soln.
-
-Q. Paytm. Count digit's(0-9) occurence in numbers from 1 to 100.  
-```
-store_num = []
-for i in range(1,101):
-    store_num.extend(list(str(i)))
-#     list(str(i))
-Counter(store_num)
-```
-
-Q. Ericsson. Write a programme to check two sorted array to merge into one. Just a simple idea.
-```
-# A
-# B
-
-# C= []
-# i = 0
-# j = 0
-
-for k in range(len(A+B)):
-    if A[i] <= B[j]:
-        C[k] = A[i]
-        i= i+1
-    else:
-        C[k] = B[j]
-        j = j+1
-
-    if len(A) <= i:
-        C.append(B[j+1:])
-    if len(B) <= j:
-        C.append(A[i+1:])     
-```
+Q. Lists are for homogeneous data and tuples are for heterogeneous data… why?
+https://stackabuse.com/lists-vs-tuples-in-python/
 
 
-
-
-
-
-
-
-### Solutions
-
+Q. Describe Tree, SVM and Random forest. Talk about their advantage and disadvantages.  
+A. *Decision Trees*: a tree-like model used to model decisions based on one or more conditions.  
+Pros: easy to implement, intuitive, handles missing values  
+Cons: high variance, inaccurate  
+*Support Vector Machines*: a classification technique that finds a hyperplane or a boundary between the two classes of data that maximizes the margin between the two classes. There are many planes that can separate the two classes, but only one plane can maximize the margin or distance between the classes.  
+Pros: accurate in high dimensionality  
+Cons: prone to over-fitting, does not directly provide probability estimates  
+*Random Forests*: an ensemble learning technique that builds off of decision trees. Random forests involve creating multiple decision trees using bootstrapped datasets of the original data and randomly selecting a subset of variables at each step of the decision tree. The model then selects the mode of all of the predictions of each decision tree.  
+Pros: can achieve higher accuracy, handle missing values, feature scaling not required, can determine feature importance.  
+Cons: black box, computationally intensive
