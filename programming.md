@@ -88,6 +88,10 @@ for k in range(len(A+B)):
         C.append(A[i+1:])     
 ```
 
+Q. Ericsson. estimate the value of pi to the closest approximate value, you can use random number generator function as many times as required.   
+https://www.geeksforgeeks.org/estimating-value-pi-using-monte-carlo/
+
+Q. Design a parking system for airport, there are fixed no of slots for each type of vehicle and each #vehicle has a type and number. The amount charged is based on price per type per min. So when a #vehicle enters, it plate number is noted and if there is an available slot for that vehicle its #allowed to be parked.
 
 
 
