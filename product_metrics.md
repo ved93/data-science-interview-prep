@@ -1,3 +1,7 @@
+https://stellarpeers.com/blog/
+
+
+
 Q. How would you design a metric to compare rankings of lists of shows for a given user?
 
 A. 
