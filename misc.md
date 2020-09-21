@@ -21,3 +21,15 @@ Cons: prone to over-fitting, does not directly provide probability estimates
 *Random Forests*: an ensemble learning technique that builds off of decision trees. Random forests involve creating multiple decision trees using bootstrapped datasets of the original data and randomly selecting a subset of variables at each step of the decision tree. The model then selects the mode of all of the predictions of each decision tree.  
 Pros: can achieve higher accuracy, handle missing values, feature scaling not required, can determine feature importance.  
 Cons: black box, computationally intensive
+
+
+Q. What is CNN ?  
+A. A CNN consists of followings:
+* Input layer
+* Conv + Activation Layer
+* MaxPooling
+* Full Connected layer
+* Activation         
+https://towardsdatascience.com/mnist-handwritten-digits-classification-using-a-convolutional-neural-network-cnn-af5fafbc35e9
+
+https://www.quora.com/What-is-a-convolutional-neural-network
