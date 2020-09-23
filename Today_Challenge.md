@@ -1,35 +1,48 @@
-Q. The probability that item an item at location A is 0.6, and 0.8 at location B. What is the probability that item would be found on Amazon website?   
-```
-P(A or B) = P(A) + P(B) — P(A and B)
-P(A or B) = 0.6 + 0.8 - (0.6*0.8)
-P(A or B) = 0.92
-```
-Q: What is boosting?  
-Boosting is an ensemble method to improve a model by reducing its bias and variance, ultimately converting weak learners to strong learners. The general idea is to train a weak learner and sequentially iterate and improve the model by learning from the previous learner. 
 
-Q. Lists are for homogeneous data and tuples are for heterogeneous data… why?
-https://stackabuse.com/lists-vs-tuples-in-python/
+https://gto76.github.io/python-cheatsheet/
+
+1. Two sum and its different variants are good for multiple problems.  
+2. A quick sort/merge sort have complexity nlogn
+3. If an array is sorted then two-pointer sol is good.
+4. hash-map is good concepts to look up values
+5. Two-pointers method's complexity is O(n)
+6. if youn have sorted list/array, think of using 2 pointers method
+7. 3 sum can be easily converted to 2 sum. Use these heuristics.
+8. Dont forget extreme cases
+9. Accessing qa func from a class.Then use self.func
+10. If you need to count ways then think of dp and recursion
+11. Recursion is weak part. Solve some problems(Fibonacci,Factorial etc) on recursion and read the blog.
+12. Revisit Binary search algo and think about use-cases. Two pointer method
+13. two sum problem's 2 pointer solution is good. Implement by yourself bcz it has details whihc you tend to ignore if you dont implement gtourself.
+14. If you are repeatedly partitioning your data by some factor, timecomplexity is going to be log n. i.e. 
+    ```
+    for i in range(0,n,step = 2*i):
+    ```
+    Time Complexity of a loop is considered as O(Logn) if the loop variables is divided / multiplied by a constant amount.
+15. There are two ways to use divide and conquer or reducing the problem  
+    1. Use of left and right with while loop 
+    2. Use recursion   
+16. ede 
 
 
-Q. Describe Tree, SVM and Random forest. Talk about their advantage and disadvantages.  
-A. *Decision Trees*: a tree-like model used to model decisions based on one or more conditions.  
-Pros: easy to implement, intuitive, handles missing values  
-Cons: high variance, inaccurate  
-*Support Vector Machines*: a classification technique that finds a hyperplane or a boundary between the two classes of data that maximizes the margin between the two classes. There are many planes that can separate the two classes, but only one plane can maximize the margin or distance between the classes.  
-Pros: accurate in high dimensionality  
-Cons: prone to over-fitting, does not directly provide probability estimates  
-*Random Forests*: an ensemble learning technique that builds off of decision trees. Random forests involve creating multiple decision trees using bootstrapped datasets of the original data and randomly selecting a subset of variables at each step of the decision tree. The model then selects the mode of all of the predictions of each decision tree.  
-Pros: can achieve higher accuracy, handle missing values, feature scaling not required, can determine feature importance.  
-Cons: black box, computationally intensive
 
 
-Q. What is CNN ?  
-A. A CNN consists of followings:
-* Input layer
-* Conv + Activation Layer
-* MaxPooling
-* Full Connected layer
-* Activation         
-https://towardsdatascience.com/mnist-handwritten-digits-classification-using-a-convolutional-neural-network-cnn-af5fafbc35e9
 
-https://www.quora.com/What-is-a-convolutional-neural-network
+
+
+
+### Links to revisit
+
+1. Visualisation of recursion Fibonacci *Highly recommended* https://www.cs.usfca.edu/~galles/visualization/DPFib.html
+2. [Recursion-How to think](https://medium.com/@daniel.oliver.king/getting-started-with-recursion-f89f57c5b60e)  
+3. https://www.khanacademy.org/computing/computer-science/algorithms/recursive-algorithms/a/recursion
+4. https://indepth.dev/dijkstra-was-right-recursion-should-not-be-difficult/
+5. https://leetcode.com/problems/min-cost-climbing-stairs/discuss/657490/Python-solution-from-a-beginner-(some-easy-steps-to-follow-to-solve-dp)
+6. [Dynamic Programming](https://leetcode.com/discuss/general-discussion/475924/my-experience-and-notes-for-learning-dp)
+7. [Dynamic Programming pattern](https://leetcode.com/discuss/general-discussion/458695/dynamic-programming-patterns)
+8. https://leetcode.com/problems/house-robber/discuss/156523/From-good-to-great.-How-to-approach-most-of-DP-problems.
+9. https://leetcode.com/problems/longest-palindromic-subsequence/discuss/222605/dp-problem-classifications-helpful-notes
+10. https://softwareengineering.stackexchange.com/questions/146021/determining-if-an-algorithm-is-o-log-n
+11. 
+
+
