@@ -11,3 +11,5 @@ Word2vec produces one vector per word, whereas tf-idf produces a score. Word2vec
 
 Q. How is GloVe different from word2vec?
 A. https://www.quora.com/How-is-GloVe-different-from-word2vec
+
+Q.
