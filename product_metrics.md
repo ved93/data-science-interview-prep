@@ -1,5 +1,10 @@
 https://stellarpeers.com/blog/
 
+https://www.ycombinator.com/library/1y-key-metrics
+
+https://towardsdatascience.com/the-definitive-guide-to-designing-product-metrics-ba5d9e8e07e9
+
+
 
 
 Q. How would you design a metric to compare rankings of lists of shows for a given user?
