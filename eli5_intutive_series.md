@@ -10,10 +10,6 @@ https://www.kaggle.com/vipulgandhi/how-to-choose-right-metric-for-evaluating-ml-
 
 
 
-
-
-
-
 ### Random Forest
 There are 10 students- *# trees*  
 No-one was there for whole year- *sample data*  
