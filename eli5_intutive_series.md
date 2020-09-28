@@ -7,9 +7,6 @@ the AUC of a classifier is equal to the probability that the classifier will ran
 https://www.kaggle.com/vipulgandhi/how-to-choose-right-metric-for-evaluating-ml-model
 
 
-
-
-
 ### Random Forest
 There are 10 students- *# trees*  
 No-one was there for whole year- *sample data*  
