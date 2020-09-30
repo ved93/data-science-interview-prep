@@ -1,83 +1,103 @@
+Q. Given a number n, return the number of lists of consecutive positive integers that sum up to n.
+For example, for n = 9, you should return 3 since the lists are: [2, 3, 4], [4, 5], and [9]. Can you do it in linear time?
+
+A. This is tricky problem. Search on leetcode for the solution
 
 
-Q. How can you decide how long to run an experiment? What are some problems with just using a fixed p-value threshold and how do you work around them?
+Q. This problem was asked by Stripe.
 
-A. There are few ways to answer this question:
+Write a program to generate the partitions for a number n. A partition for n is a list of positive integers that sum up to n. For example: if n = 4, we want to return the following partitions: [1,1,1,1], [1,1,2], [2,2], [1,3], and [4]. Note that a partition [1,3] is the same as [3,1] so only the former is included.
 
-1. Keep running your experiment till you get 90%-95% statistical significance.
-2. calculate effect size for your experiment using tools like [optimizely](https://www.optimizely.com/sample-size-calculator/), [experimentcalculator](https://www.experimentcalculator.com/) 
-3. Atleast have 1000 conversions
+Q. why do we use defaultdict?  
+A. A common problem that you can face when working with Python dictionaries is to try to access or modify keys that don’t exist in the dictionary. This will raise a KeyError and break up your code execution. To handle these kinds of situations, the standard library provides the Python defaultdict type, a dictionary-like class that’s available for you in collections.  
+The Python defaultdict type behaves almost exactly like a regular Python dictionary, but if you try to access or modify a missing key, then defaultdict will automatically create the key and generate a default value for it. This makes defaultdict a valuable option for handling missing keys in dictionaries.
+```
+# Defining a dict 
+d = defaultdict(list) 
+def_dict['one'] = 1  # Add a key-value pair
+def_dict['missing']  # Access a missing key returns an empty list
+def_dict['another_missing'].append(4)  # Modify a missing key
 
-If we use just fixed p-value threshold, then it might results into p-value hacking. To work around them we can calculate effect size separately.
+# Defining the dict 
+# The default value is 0 
+d = defaultdict(int) 
+a_dct = defaultdict(float)   # The Default Value is "0.0"
+a_dct = defaultdict(str)   # The Default Value is ""
 
----
-Q. A coin was flipped 1000 times, and 560 times it showed up heads. Do you think the coin is biased? Why or why not?(Google)
+# dict with lambda func which returns 100
+d = defaultdict(lambda : 100)
+ ```
+Q. Given a function with inputs — an array with N randomly sorted numbers, and an int K, return output in an array with the K largest numbers.
 
-A. The variance for # of heads in 1000 flips of a fair coin would be (0.5)(1–0.5)(1000) = 250 and the standard deviation is the square root of the variance: √250 = 15.81+. And of course the mean would be (0.5)(1000) = 500.
+Q. check empty list  
+```
+if not list:
+    print('its empty')
 
-So 560 is (560–500)/15.81 = +3.794… standard deviations.
+```
 
-A 95% confidence interval is ±1.96 standard deviations, which would be ±30.99 or between 469.01 and 530.99. So 560 heads is a BIG outlier. The coin probably is biased.
+Q. Asked by Paytm. You have been given two metrics. Write a code to identify if thet are symmetric metrics.  
+A. My soln. Need to refine
+``` 
+mat = np.matrix(2,3,1)
+flag = 0
+for i in range(2,mat.shape[0]):
+    for j in range(1,mat.shape[0]):
+        if mat[i][j] = mat[j][i]:
+            print()
+            flag = 1
+        else:
+            flag =0
+            print('not symmetric')
+        
+if flag == 1:
+    print('symmetric')        
+``` 
 
-On the other hand, 56 heads in 100 trials - the same proportion with a smaller sample - would only be +1.2 standard deviations (mean is 50, standard deviation is 5.) So that would be too small of a sample to conclude that the coin is biased.
+Q. Asked by Delhivery. Write a programme to write factorial. Implement both recursion and dynamic programming soln.
 
----
-Q. Uber. Say you need to produce a binary classifier for fraud detection. What metrics would you look at, how is each defined, and what is the interpretation of each one?
+Q. Paytm. Count digit's(0-9) occurence in numbers from 1 to 100.  
+```
+store_num = []
+for i in range(1,101):
+    store_num.extend(list(str(i)))
+#     list(str(i))
+Counter(store_num)
+```
 
-A. I have worked a bit in the fraud domain, and we definitely look at ROC AUC as our primary metric. The fact that it's not sensitive to class imbalance can be a feature, not a bug. Consider retraining models on a monthly basis, and trying to compare performance across time. PR-AUC will be driven by a combination of model performance and underlying fraud rate, whereas ROC-AUC is robust to variable fraud rate.
+Q. Ericsson. Write a programme to check two sorted array to merge into one. Just a simple idea.
+```
+# A
+# B
 
-Second, the business typically makes a decision based on the impact to good customers, or in other words, FPR. Then, the important question becomes: at this given FPR, how much of the fraud am I capturing? This is precisely what the ROC curve tells us. Also note the host said they care more about partial ROC AUC, and this is likely for the same reason: they care about very low FPR, so only the area under this section of the curve is most relevant.
+# C= []
+# i = 0
+# j = 0
 
-That said, if you instead have a model that's evaluating e.g. every hour and sending accounts for human investigation, then your primary bottle-neck is investigator bandwidth, and in this case, you might focus on Precision/Recall metrics as you will likely have a target precision.
+for k in range(len(A+B)):
+    if A[i] <= B[j]:
+        C[k] = A[i]
+        i= i+1
+    else:
+        C[k] = B[j]
+        j = j+1
 
----
-Q. Facebook.Imagine the social graphs for both Facebook and Twitter. How do they differ? What metric would you use to measure how skewed the social graphs are?
+    if len(A) <= i:
+        C.append(B[j+1:])
+    if len(B) <= j:
+        C.append(A[i+1:])     
+```
 
-A. First you should recognize that Twitter is *following* vs. a FB friendship (connections are 2-way street). Second part has to do with comparing the "equality" of Twitter vs FB social graph. In TW, you have a small % with a TON of connections (and then a long tail), and FB you have a much less extreme version of that. Think how you would plot out distribution of connections per user and how FB/TW are different.
+Q. Ericsson. estimate the value of pi to the closest approximate value, you can use random number generator function as many times as required.   
+https://www.geeksforgeeks.org/estimating-value-pi-using-monte-carlo/
 
----
-Q. What does it mean for an estimator to be unbiased? What about consistent? Give examples of an unbiased but not consistent estimator, as well as a biased but consistent estimator.
-
-A. https://stats.stackexchange.com/questions/31036/what-is-the-difference-between-a-consistent-estimator-and-an-unbiased-estimator
-
----
-Q. There are two games involving dice that you can play. In the first game, you roll two die at once and get the dollar amount equivalent to the product of the rolls. In the second game, you roll one die and get the dollar amount equivalent to the square of that value. Which has the higher expected value and why?
-
-A. 
-
----
-Q. Google. Say you are running a multiple linear regression and believe there are several predictors that are correlated. How will the results of the regression be affected if they are indeed correlated? How would you deal with this problem?
-
-A. Interpretability of coefficients wont make sense and coefficients will be unstable
-
----
-Q. Uber.Say you are given a random Bernoulli trial generator. How would you generate values from a standard normal distribution?
-
-A.
-
----
-Q. What are MLE and MAP? What is the difference between the two?  
-A. [Check here](https://www.quora.com/What-is-the-difference-between-Maximum-Likelihood-ML-and-Maximum-a-Posteriori-MAP-estimation)  
-
-Q. Why does gradient point the direction of steepest ascent?   
-A. https://www.khanacademy.org/math/multivariable-calculus/multivariable-derivatives/gradient-and-directional-derivatives/v/why-the-gradient-is-the-direction-of-steepest-ascent
-
-https://www.quora.com/Can-you-explain-intuitively-or-with-an-example-why-the-gradient-points-to-the-direction-of-steepest-ascent  
-https://www.quora.com/What-is-an-intuitive-explanation-for-why-the-gradient-points-in-the-direction-of-steepest-ascent  
-https://betterexplained.com/articles/vector-calculus-understanding-the-gradient/   
-https://math.stackexchange.com/questions/223252/why-is-gradient-the-direction-of-steepest-ascent
-https://www.khanacademy.org/math/multivariable-calculus/multivariable-derivatives/gradient-and-directional-derivatives/v/directional-derivative
-
-Q. what is poisson distribution?  
-A. The Poisson distribution is the discrete probability distribution of the number of events occurring in a given time period, given the average number of times the event occurs over that time period. A certain fast-food restaurant gets an average of 3 visitors to the drive-through per minute.
-The number of cases a doctor can handle in a day is a positive number, this can be modelled by a Poisson distribution.  
-*Additional notes*:
-Normal distribution can be used when we have a real number taking values between negative and positive infinity. Clearly this is not the case for the number of cases taken by a doctor per day.  
-Bernoulli distribution is used to model binary random variables, for instance the result of a coin toss. Hence, it cannot be used to model a random variable that is not binary.
+Q. Design a parking system for airport, there are fixed no of slots for each type of vehicle and each #vehicle has a type and number. The amount charged is based on price per type per min. So when a #vehicle enters, it plate number is noted and if there is an available slot for that vehicle its #allowed to be parked.
 
 
-Q. You are doing an experiment to determine whether a new coffee recipe you invented, that is more healthy is actually likable by people. You want to make sure people like this coffee atleast as much as the previous coffee by looking at the average rating they give. Which kind of test would make more sense in this setting ?  
-A. If you do a two sided test, your null hypothesis will be, people like the old recipe as much as the newer recipe. If you measure the ratings and compute the p value, you will be in a position to reject the null hypothesis that people like the old recipe as much as the newer one.
 
-With a one sided test, the null hypothesis will be : people like the previous recipe better than the current recipe. If you are able to get an appropriate p value with the adequate sample size, you can conclude that the people do not like the previous coffee more than the current coffee. Note that you still cannot conclude that they like the new one more.
-https://stats.idre.ucla.edu/other/mult-pkg/faq/general/faq-what-are-the-differences-between-one-tailed-and-two-tailed-tests/
+
+
+
+
+### Solutions
+
