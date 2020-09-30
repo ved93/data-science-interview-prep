@@ -93,6 +93,8 @@ https://www.geeksforgeeks.org/estimating-value-pi-using-monte-carlo/
 
 Q. Design a parking system for airport, there are fixed no of slots for each type of vehicle and each #vehicle has a type and number. The amount charged is based on price per type per min. So when a #vehicle enters, it plate number is noted and if there is an available slot for that vehicle its #allowed to be parked.
 
+Q. Check permutation of string can become a palindrome?
+Q. 
 
 
 
