@@ -42,6 +42,8 @@ generalized pigeonhole principle, at least one box contains at least
 select 41 cards, we may have 39 cards which are not hearts along with 2
 hearts. However, when we select 42 cards, we must have at least three
 hearts. (Note that the generalized pigeonhole principle is not used here.)
+
+A.5 C(4+6-1, 6) = C(9,6) = 84.
  
 
  
