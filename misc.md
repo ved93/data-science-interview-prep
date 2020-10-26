@@ -33,3 +33,5 @@ A. A CNN consists of followings:
 https://towardsdatascience.com/mnist-handwritten-digits-classification-using-a-convolutional-neural-network-cnn-af5fafbc35e9
 
 https://www.quora.com/What-is-a-convolutional-neural-network
+
+
