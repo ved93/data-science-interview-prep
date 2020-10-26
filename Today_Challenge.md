@@ -1,18 +1,29 @@
 
-Q.1 A mixture of 40 litres of milk and water contains 10% water. What q might.How much water should be added so that the water is 20% in the new mixture?  
+https://gto76.github.io/python-cheatsheet/
 
-Q.2 If there are 2 containers having a mixture of milk and water in the ratio of 5:3 and 2:3, in what ratio should the two mixtures be mixed so that the resulting mixtures have the milk and water in the same proportions?  
+1. Two sum and its different variants are good for multiple problems.  
+2. A quick sort/merge sort have complexity nlogn
+3. If an array is sorted then two-pointer sol is good.
+4. hash-map is good concepts to look up values
+5. Two-pointers method's complexity is O(n)
+6. if youn have sorted list/array, think of using 2 pointers method
+7. 3 sum can be easily converted to 2 sum. Use these heuristics.
+8. Dont forget extreme cases
+9. Accessing qa func from a class.Then use self.func
+10. If you need to count ways then think of dp and recursion
+11. Recursion is weak part. Solve some problems(Fibonacci,Factorial etc) on recursion and read the blog.
+12. Revisit Binary search algo and think about use-cases. Two pointer method
+13. two sum problem's 2 pointer solution is good. Implement by yourself bcz it has details whihc you tend to ignore if you dont implement gtourself.
+14. If you are repeatedly partitioning your data by some factor, timecomplexity is going to be log n. i.e. 
+    ```
+    for i in range(0,n,step = 2*i):
+    ```
+    Time Complexity of a loop is considered as O(Logn) if the loop variables is divided / multiplied by a constant amount.
+15. There are two ways to use divide and conquer or reducing the problem  
+    1. Use of left and right with while loop 
+    2. Use recursion   
+16. ede 
 
-Q.3 Suppose that “I Love Discrete Math” T-shirts come in five different sizes: S,M,L,XL, and XXL. Each size comes in four colors (white, red, green, and black), except XL, which comes only in red,green, and black, and XXL, which comes only in green and black.What is the minimum number of stores that the campus book store needs to stock to have one of each size and color available?
-
-Q.4 a) How many cards must be selected from a standard
-deck of 52 cards to guarantee that at least three cards of the same suit are chosen?
- b) How many must be selected to guarantee that at least three
-hearts are selected?
-
-Q.5 Suppose that a cookie shop has four different
-kinds of cookies. How many different ways can six
-cookies be chosen? 
 
 
 
@@ -20,28 +31,18 @@ cookies be chosen?
 
 
 
+### Links to revisit
+
+1. Visualisation of recursion Fibonacci *Highly recommended* https://www.cs.usfca.edu/~galles/visualization/DPFib.html
+2. [Recursion-How to think](https://medium.com/@daniel.oliver.king/getting-started-with-recursion-f89f57c5b60e)  
+3. https://www.khanacademy.org/computing/computer-science/algorithms/recursive-algorithms/a/recursion
+4. https://indepth.dev/dijkstra-was-right-recursion-should-not-be-difficult/
+5. https://leetcode.com/problems/min-cost-climbing-stairs/discuss/657490/Python-solution-from-a-beginner-(some-easy-steps-to-follow-to-solve-dp)
+6. [Dynamic Programming](https://leetcode.com/discuss/general-discussion/475924/my-experience-and-notes-for-learning-dp)
+7. [Dynamic Programming pattern](https://leetcode.com/discuss/general-discussion/458695/dynamic-programming-patterns)
+8. https://leetcode.com/problems/house-robber/discuss/156523/From-good-to-great.-How-to-approach-most-of-DP-problems.
+9. https://leetcode.com/problems/longest-palindromic-subsequence/discuss/222605/dp-problem-classifications-helpful-notes
+10. https://softwareengineering.stackexchange.com/questions/146021/determining-if-an-algorithm-is-o-log-n
+11. 
 
 
-
-
-
-
-## Solutions
-A.2 Mixture-1: Milk: Water = 5:3 i.e. Milk:Total = 5:8 i.e. a = 5/8
-Mixture-2: Milk: Water = 2:3 i.e. Milk:Total = 2:5 i.e. b = 2/5
-Resultant mixture: Milk: Water = 1:1 i.e. Milk:Total = 1:2 i.e. c = 1/2
-Ratio of Mixture-1:Mixture-2 used = a – c : c – b (Using the formula of alligations)= 5:4
-
-A.3 Draw the tree diagram. 17   
-A.4  a) We assume four boxes; one for each suit. Using the
-generalized pigeonhole principle, at least one box contains at least
-⌈N/4⌉ cards. At least three cards of one suit are selected if ⌈N/4⌉
-≥3. The smallest integer N such that ⌈N/4⌉ ≥3 is N
-= 2 · 4 + 1 = 9.
- b) A deck contains 13 hearts and 39 cards which are not hearts. So, if we
-select 41 cards, we may have 39 cards which are not hearts along with 2
-hearts. However, when we select 42 cards, we must have at least three
-hearts. (Note that the generalized pigeonhole principle is not used here.)
- 
-
- 
