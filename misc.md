@@ -34,5 +34,3 @@ https://towardsdatascience.com/mnist-handwritten-digits-classification-using-a-c
 
 https://www.quora.com/What-is-a-convolutional-neural-network
 
-
-chec
