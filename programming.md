@@ -100,6 +100,89 @@ Q.
 
 
 
+'''
+Given a sorted integer array nums, where the range of elements are in the inclusive range [lower, upper]
+ return its missing ranges.
+
+    Example:
+
+    Input: nums = [0, 1, 3, 50, 75], lower = 0 and upper = 99,
+    Output: ["2", "4->49", "51->74", "76->99"]
+'''
+
+
+
+def append_elem(lst, out):
+  #print(lst)
+  if len(lst) == 0:
+    pass
+  elif len(lst) == 1:
+      out.append(lst[0])
+  else:
+    out.append('{0}->{1}'.format(min(lst), max(lst)))
+    
+  #print(out)
+  return out
+
+
+def missing_num_2(a, l, u):
+  output = []
+  tmp_lst = []
+  
+  for i in range(l, u+1):
+    #print(i)
+    if i not in a:
+      #print(i)
+      tmp_lst.append(i)
+    else:
+      #print(tmp_lst)
+      output = append_elem(tmp_lst, output)
+      tmp_lst = []
+        
+  if len(tmp_lst) != 0:
+    output = append_elem(tmp_lst, output)
+    
+  return output
+
+
+
+print(missing_num_2([0, 1, 3, 50, 75],0,99) )   
+
+'''
+def missing_num(a,l,u):
+  b = []
+  for i in range(l,len(a)):
+    if a[i] == l:
+      l=l+1
+      continue
+    else:
+      
+          #     if i+1 == len(a):
+          # r='{}->{}'.format(l,a[i+1]-1)
+          # # print(r)
+          # b.append(r)
+          
+          # return b
+      
+      if a[i+1] != (l+1):
+        r='{}->{}'.format(l,a[i+1]-1)
+        # print(r)
+        b.append(r)
+        
+      else:  
+        b.append(str(l))
+      l = l+1
+  
+  return b
+       
+
+print(missing_num([0, 1, 3, 50, 75],0,99) )      '''
+
+
+
+
+
+
 
 ### Solutions
 

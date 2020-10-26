@@ -61,4 +61,8 @@ Logistic regression is a *generalized linear model*. Generalized linear models a
 Q. You have a dataset of a million example digits, what are some desirable qualities due to which you would pick a KNN classifier for digit recognition ?  
 A. Lavanya.The following are some features of the KNN classifier The KNN classifier is simple to implement. Prediction could be relatively inefficient with the KNN classifier. While there is no training effort with the KNN algorithm, prediction involves scanning the entire training data to find the K-nearest neighbours to aggregate their value. With efficient implementation, such as a KD-tree the prediction time could be improved. With a high value of K, the decision boundary becomes smoother while the decision boundary is more noisy with a low value of K. The KNN-algorithm is non-parametric and can fit highly non-linear decision boundaries.
 
+Q. Bias-variance trade-off in MSE
+
+A. https://www.countbayesie.com/blog/2019/1/30/a-deeper-look-at-mean-squared-error
+
 
