@@ -91,14 +91,81 @@ for k in range(len(A+B)):
 Q. Ericsson. estimate the value of pi to the closest approximate value, you can use random number generator function as many times as required.   
 https://www.geeksforgeeks.org/estimating-value-pi-using-monte-carlo/
 
-Q. Design a parking system for airport, there are fixed no of slots for each type of vehicle and each #vehicle has a type and number. The amount charged is based on price per type per min. So when a #vehicle enters, it plate number is noted and if there is an available slot for that vehicle its #allowed to be parked.
+Q. Design a parking system for airport, there are fixed no of slots for each type of vehicle and each #vehicle has a type and number. The amount charged is based on price per type per min. So when a #vehicle enters, it plate number is noted and if there is an available slot for that vehicle its #allowed to be parked.?
 
-Q. Check permutation of string can become a palindrome?
+Q. There are 100 ropes in a bag. In each step, two rope ends are picked at random, tied together and put back into a bag. The process is repeated until there are no free ends.
+What is the expected number of loops at the end of the process?   
+A. https://math.stackexchange.com/questions/2209/expected-number-of-loops
+
+```
+import numpy as np
+import random 
+
+
+
+# print(random.randint(1,200))
+l = {}
+last_end = 0
+loop = 0
+
+num_list=list(range(0,200))
+
+print(random.choices(num_list,k=2))
+
+last_end,last_str = 0,0
+m =0
+for i in range(1,101):
+  # endp=random.randint(1,200)
+  # strp=random.randint(1,200)
+  ends=random.sample(num_list,k=2)
+  
+
+  print(ends)
+  num_list.remove(ends[0])
+  num_list.remove(ends[1])
+
+  if last_str in ends and last_end in ends:
+    print('was here')
+    loop = loop+1
+
+  elif last_str in ends or last_end in ends:
+    if   last_str in ends:
+      l[m]=[last_str,last_end]
+
+
+
+
+
+  if ends[0] % 2 == 0:
+    last_str = ends[0]-1
+  else:
+    last_str = ends[0]+1
+
+
+  if ends[1] % 2 == 0:
+    last_end = ends[1]-1
+  else:
+    last_end = ends[1]+1
+
+
+  l[m]=[last_str,last_end]
+  m= m+1
+    
+    
+
+  # last_str = ends[0]
+  # last_end = ends[1]
+
+print(loop)
+
+```
+
+
 Q. 
 
 
-
-
+Q. Check permutation of string can become a palindrome?  
+Q. 
 
 '''
 Given a sorted integer array nums, where the range of elements are in the inclusive range [lower, upper]
