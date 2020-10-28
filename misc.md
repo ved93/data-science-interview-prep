@@ -10,6 +10,7 @@ Boosting is an ensemble method to improve a model by reducing its bias and varia
 Q. Lists are for homogeneous data and tuples are for heterogeneous data… why?
 https://stackabuse.com/lists-vs-tuples-in-python/
 
+---
 
 Q. Describe Tree, SVM and Random forest. Talk about their advantage and disadvantages.  
 A. *Decision Trees*: a tree-like model used to model decisions based on one or more conditions.  
@@ -33,7 +34,6 @@ A. A CNN consists of followings:
 https://towardsdatascience.com/mnist-handwritten-digits-classification-using-a-convolutional-neural-network-cnn-af5fafbc35e9
 
 https://www.quora.com/What-is-a-convolutional-neural-network
-
 
 Q. 
 
