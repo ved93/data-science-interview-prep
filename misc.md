@@ -5,6 +5,7 @@ P(A or B) = 0.6 + 0.8 - (0.6*0.8)
 P(A or B) = 0.92
 ```
 
+
 Q: What is boosting?  
 Boosting is an ensemble method to improve a model by reducing its bias and variance, ultimately converting weak learners to strong learners. The general idea is to train a weak learner and sequentially iterate and improve the model by learning from the previous learner. 
 
