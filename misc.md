@@ -1,5 +1,4 @@
 Q. The probability that item an item at location A is 0.6, and 0.8 at location B. What is the probability that item would be found on Amazon website? 
-
 ```
 P(A or B) = P(A) + P(B) — P(A and B)
 P(A or B) = 0.6 + 0.8 - (0.6*0.8)
