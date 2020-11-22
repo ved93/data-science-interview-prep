@@ -14,6 +14,11 @@ Q.5 Suppose that a cookie shop has four different
 kinds of cookies. How many different ways can six
 cookies be chosen? 
 
+Q.6 If 3 men or 4 women can do a piece of work in 16 days, in how many days can 12 men and 8 women do the same piece of work?  
+ 
+
+ 
+
 
 
 
@@ -44,6 +49,8 @@ hearts. However, when we select 42 cards, we must have at least three
 hearts. (Note that the generalized pigeonhole principle is not used here.)
 
 A.5 C(4+6-1, 6) = C(9,6) = 84.
+
+A.6 https://www.hitbullseye.com/Time-and-Work-Problems.php
  
 
  
