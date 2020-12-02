@@ -1,7 +1,8 @@
 
 Q.1 ABC is an e-commerce company. It gives expected delivery date for products you shop. It is found that if delivery date is long then there is some drop in conversion and RTO also starts to happen and if its too short then conversion rate increases but you miss the product delivery date more often. Now you want to increase the conversion rate and you are data scientist, how would you approach it? Which metric should i use for this task?
 
-Q.2 ABC is an airline/hotel company. Conversion depends ranking of hotels you show to the customer. So how would you rank the hotels?  
+Q.2 ABC is an airline/hotel company. Conversion depends ranking of hotels you show to the customer. So how would you rank the hotels? How to remove ranking bias as well?
+ 
 
 Q.3 How to reduce cancellation in ecommerce/airline/grocery etc?
 

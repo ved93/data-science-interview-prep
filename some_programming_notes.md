@@ -3,7 +3,9 @@ https://gto76.github.io/python-cheatsheet/
 
 1. Create a list with zero or None. `l = [None]*n`
 2. Sort a dictionary on the basis of values and return keys
-`bst_ind =sorted(res, key = res.get, reverse =True)`   
+`bst_ind =sorted(res, key = res.get, reverse =True)`  
+`tp =sorted(d.items(), key = lambda k : (k[1],k[0]), reverse=True)`
+   
 3. Get a key from value in dictionary. Convert into key list and value list then get index of particular value from list.Use that index in key list to get the key    
 
 `list out keys and values separately 
