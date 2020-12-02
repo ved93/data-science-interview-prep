@@ -1,47 +1,56 @@
-Q. The probability that item an item at location A is 0.6, and 0.8 at location B. What is the probability that item would be found on Amazon website? 
-```
-P(A or B) = P(A) + P(B) — P(A and B)
-P(A or B) = 0.6 + 0.8 - (0.6*0.8)
-P(A or B) = 0.92
-```
 
-Q: What is boosting?  
-Boosting is an ensemble method to improve a model by reducing its bias and variance, ultimately converting weak learners to strong learners. The general idea is to train a weak learner and sequentially iterate and improve the model by learning from the previous learner. 
+Q.1 A mixture of 40 litres of milk and water contains 10% water. What q might.How much water should be added so that the water is 20% in the new mixture?  
 
+Q.2 If there are 2 containers having a mixture of milk and water in the ratio of 5:3 and 2:3, in what ratio should the two mixtures be mixed so that the resulting mixtures have the milk and water in the same proportions?  
 
-Q. Lists are for homogeneous data and tuples are for heterogeneous data… why?
-https://stackabuse.com/lists-vs-tuples-in-python/
+Q.3 Suppose that “I Love Discrete Math” T-shirts come in five different sizes: S,M,L,XL, and XXL. Each size comes in four colors (white, red, green, and black), except XL, which comes only in red,green, and black, and XXL, which comes only in green and black.What is the minimum number of stores that the campus book store needs to stock to have one of each size and color available?
 
----
+Q.4 a) How many cards must be selected from a standard
+deck of 52 cards to guarantee that at least three cards of the same suit are chosen?
+ b) How many must be selected to guarantee that at least three
+hearts are selected?
 
-Q. Describe Tree, SVM and Random forest. Talk about their advantage and disadvantages.  
-A. *Decision Trees*: a tree-like model used to model decisions based on one or more conditions.  
-Pros: easy to implement, intuitive, handles missing values  
-Cons: high variance, inaccurate  
-*Support Vector Machines*: a classification technique that finds a hyperplane or a boundary between the two classes of data that maximizes the margin between the two classes. There are many planes that can separate the two classes, but only one plane can maximize the margin or distance between the classes.  
-Pros: accurate in high dimensionality  
-Cons: prone to over-fitting, does not directly provide probability estimates  
-*Random Forests*: an ensemble learning technique that builds off of decision trees. Random forests involve creating multiple decision trees using bootstrapped datasets of the original data and randomly selecting a subset of variables at each step of the decision tree. The model then selects the mode of all of the predictions of each decision tree.  
-Pros: can achieve higher accuracy, handle missing values, feature scaling not required, can determine feature importance.  
-Cons: black box, computationally intensive
+Q.5 Suppose that a cookie shop has four different
+kinds of cookies. How many different ways can six
+cookies be chosen? 
 
+Q.6 If 3 men or 4 women can do a piece of work in 16 days, in how many days can 12 men and 8 women do the same piece of work?  
+ 
 
-Q. What is CNN ?  
-A. A CNN consists of followings:
-* Input layer
-* Conv + Activation Layer
-* MaxPooling
-* Full Connected layer
-* Activation         
-https://towardsdatascience.com/mnist-handwritten-digits-classification-using-a-convolutional-neural-network-cnn-af5fafbc35e9
-
-https://www.quora.com/What-is-a-convolutional-neural-network
-
-Q. 
+ 
 
 
 
 
 
 
-## Solution
+
+
+
+
+
+
+
+## Solutions
+A.2 Mixture-1: Milk: Water = 5:3 i.e. Milk:Total = 5:8 i.e. a = 5/8
+Mixture-2: Milk: Water = 2:3 i.e. Milk:Total = 2:5 i.e. b = 2/5
+Resultant mixture: Milk: Water = 1:1 i.e. Milk:Total = 1:2 i.e. c = 1/2
+Ratio of Mixture-1:Mixture-2 used = a – c : c – b (Using the formula of alligations)= 5:4
+
+A.3 Draw the tree diagram. 17   
+A.4  a) We assume four boxes; one for each suit. Using the
+generalized pigeonhole principle, at least one box contains at least
+⌈N/4⌉ cards. At least three cards of one suit are selected if ⌈N/4⌉
+≥3. The smallest integer N such that ⌈N/4⌉ ≥3 is N
+= 2 · 4 + 1 = 9.
+ b) A deck contains 13 hearts and 39 cards which are not hearts. So, if we
+select 41 cards, we may have 39 cards which are not hearts along with 2
+hearts. However, when we select 42 cards, we must have at least three
+hearts. (Note that the generalized pigeonhole principle is not used here.)
+
+A.5 C(4+6-1, 6) = C(9,6) = 84.
+
+A.6 https://www.hitbullseye.com/Time-and-Work-Problems.php
+ 
+
+ 
