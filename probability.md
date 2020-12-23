@@ -125,7 +125,23 @@ a) The two components  𝑥  and  𝑦  have the same values.
 b) The value,  𝑥 , of the first component is larger than or equal to the value,  𝑦 , of the second component.   
 c) The value of  𝑥2  is larger than or equal to the value of  𝑦 .
 
-Q.22. Let the sample space be the set of positive integers and suppose that  𝐏(𝑛)=1/2𝑛 , for  𝑛=1,2,… . Find the probability of the set  {3,6,9,…} , that is, of the set of of positive integers that are multiples of  3 .
+Q.22. Let the sample space be the set of positive integers and suppose that  𝐏(𝑛)=1/2𝑛 , for  𝑛=1,2,… . Find the probability of the set  {3,6,9,…} , that is, of the set of of positive integers that are multiples of  3 .   
+
+Q.23 untill head or success, find expected number of trials
+https://www.quora.com/A-coin-is-tossed-until-a-head-appears-what-is-the-expected-number-of-tosses
+
+https://www.quora.com/What-is-the-expected-number-of-coin-flips-until-you-get-two-heads-in-a-row
+
+https://math.stackexchange.com/questions/192177/how-many-times-to-roll-a-die-before-getting-two-consecutive-sixes
+
+https://math.stackexchange.com/questions/1155104/expected-number-of-coin-tosses-to-land-n-heads  
+
+https://mas-dse.github.io/DSE210/slides%20and%20worksheets/Class%202.pdf
+
+https://math.stackexchange.com/questions/3567745/expectation-problem-1
+
+https://www.statisticshowto.com/probability-and-statistics/expected-value/
+
 
 ### Solutions
 
