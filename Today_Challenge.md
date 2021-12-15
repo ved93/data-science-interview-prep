@@ -1,56 +1,55 @@
 
-Q.1 A mixture of 40 litres of milk and water contains 10% water. What q might.How much water should be added so that the water is 20% in the new mixture?  
 
-Q.2 If there are 2 containers having a mixture of milk and water in the ratio of 5:3 and 2:3, in what ratio should the two mixtures be mixed so that the resulting mixtures have the milk and water in the same proportions?  
+1. Let the sample space be the set of all positive integers. Is it possible to have a “uniform" probability law, that is, a probability law that assigns the same probability  𝑐  to each positive integer?
+2. Let the sample space be the two-dimensional plane. For any real number  𝑥 , let  𝐴𝑥  be the subset of the plane that consists of all points of the vertical line through the point  (𝑥,0) , i.e.,  𝐴𝑥={(𝑥,𝑦):𝑦∈Re} .
 
-Q.3 Suppose that “I Love Discrete Math” T-shirts come in five different sizes: S,M,L,XL, and XXL. Each size comes in four colors (white, red, green, and black), except XL, which comes only in red,green, and black, and XXL, which comes only in green and black.What is the minimum number of stores that the campus book store needs to stock to have one of each size and color available?
+a) Do the axioms of probability theory imply that the probability of the union of the sets  𝐴𝑥  (which is the whole plane) is equal to the sum of the probabilities  𝐏(𝐴𝑥) ?
+b)  Do the axioms of probability theory imply that
 
-Q.4 a) How many cards must be selected from a standard
-deck of 52 cards to guarantee that at least three cards of the same suit are chosen?
- b) How many must be selected to guarantee that at least three
-hearts are selected?
-
-Q.5 Suppose that a cookie shop has four different
-kinds of cookies. How many different ways can six
-cookies be chosen? 
-
-Q.6 If 3 men or 4 women can do a piece of work in 16 days, in how many days can 12 men and 8 women do the same piece of work?  
+𝐏(𝐴1∪𝐴2∪⋯)=∑𝑥=1∞𝐏(𝐴𝑥)?
+(In other words, we consider only those lines for which the  𝑥  coordinate is a positive integer.)
  
+3. Mary and Tom park their cars in an empty parking lot with  n≥2  consecutive parking spaces (i.e,  n  spaces in a row, where only one car fits in each space). Mary and Tom pick parking spaces at random; of course, they must each choose a different space. (All pairs of distinct parking spaces are equally likely.) What is the probability that there is at most one empty parking space between them? 
+4. Romeo and Juliet have a date at a given time, and each will arrive at the meeting place with a delay between 0 and 1 hour, with all pairs of delays being “equally likely," that is, according to a uniform probability law on the unit square. The first to arrive will wait for 15 minutes and will leave if the other has not arrived. What is the probability that they will meet? Instead of calculating given that they arrive within
+15 minutes of each other, what is the probability that
+they'll meet, let's say that Romeo really wants to meet up
+with Juliet, and he wants to assure himself a least, say, a
+90% chance of meeting Juliet.
+Then you can ask, if he wants to have at least a 90% chance
+of meeting her, how long should he be willing to wait?
+5. Alice and Bob each choose at random a real number between zero and one. We assume that the pair of numbers is chosen according to the uniform probability law on the unit square, so that the probability of an event is equal to its area.
+We define the following events:
 
+ 	 A 	 = 	 {The magnitude of the difference (for any two real numbers x and y, the value |x−y|) of the two numbers is greater than 1/3} 	 	 
+ 	 B 	 = 	 {At least one of the numbers is greater than 1/4} 	 	 
+ 	 C 	 = 	 {The sum of the two numbers is 1} 	 	 
+ 	 D 	 = 	 {Alice's number is greater than 1/4}
+
+
+
+
+
+### Solutions
+1. Suppose that  𝑐=0 . Then, by countable additivity,
+1=𝐏(Ω)=𝐏({1}∪{2}∪{3}⋯)=𝐏({1})+𝐏({2})+𝐏({3})+⋯=0+0+0+⋯=0, 
+which is a contradiction.
+Suppose that  𝑐>0 . Then, there exists an integer  𝑘  such that  𝑘𝑐>1 . By additivity,
+𝐏({1,2,…,𝑘})=𝑘𝑐>1, 
+which contradicts the normalization axiom.
+
+2. a) The collection of sets  𝐴𝑥  is not countable because the set of real numbers is not countable (i.e., cannot be arranged in a sequence), and so the additivity axiom does not apply.
+
+b) The countable additivity axiom applies because we are dealing with a sequence (in particular, a countable collection) of disjoint events.
+
+3. Part of EDX probability problems unit 1. The sample space is  Ω={(i,j):i≠j,1≤i,j≤n} , where outcome  (i,j)  indicates that Mary and Tom parked in slots  i  and  j , respectively. We apply the discrete uniform probability law to find the required probability. We are interested in the probability of the event
+
+A={(i,j)∈Ω:|i−j|≤2}. 
  
+We first find the cardinality of  Ω . There are  n2  pairs  (i,j) , but since the set  Ω  excludes outcomes of the form  (i,i) , the cardinality of  Ω  is  n2−n=n(n−1) .
+If n≥3, event A consists of the four lines indicated in the figure above and contains 2(n−1)+2(n−2)=4n−6 elements. If n=2, event A contains exactly 2 elements, namely, (1,2) and (2,1), which agrees with the formula 4(2)−6=2. Therefore,
 
+P(A)=4n−6/n(n−1).
 
-
-
-
-
-
-
-
-
-
-
-
-## Solutions
-A.2 Mixture-1: Milk: Water = 5:3 i.e. Milk:Total = 5:8 i.e. a = 5/8
-Mixture-2: Milk: Water = 2:3 i.e. Milk:Total = 2:5 i.e. b = 2/5
-Resultant mixture: Milk: Water = 1:1 i.e. Milk:Total = 1:2 i.e. c = 1/2
-Ratio of Mixture-1:Mixture-2 used = a – c : c – b (Using the formula of alligations)= 5:4
-
-A.3 Draw the tree diagram. 17   
-A.4  a) We assume four boxes; one for each suit. Using the
-generalized pigeonhole principle, at least one box contains at least
-⌈N/4⌉ cards. At least three cards of one suit are selected if ⌈N/4⌉
-≥3. The smallest integer N such that ⌈N/4⌉ ≥3 is N
-= 2 · 4 + 1 = 9.
- b) A deck contains 13 hearts and 39 cards which are not hearts. So, if we
-select 41 cards, we may have 39 cards which are not hearts along with 2
-hearts. However, when we select 42 cards, we must have at least three
-hearts. (Note that the generalized pigeonhole principle is not used here.)
-
-A.5 C(4+6-1, 6) = C(9,6) = 84.
-
-A.6 https://www.hitbullseye.com/Time-and-Work-Problems.php
- 
-
- 
+4. Discrete = 13/25 Continuous Case = 7/16
+5. P(A)=2⋅(2/3)22=4/9.
+6. 
