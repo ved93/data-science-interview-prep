@@ -33,6 +33,7 @@ It requires the consideration of several factors such as inventory levels, regio
 The vast majority of machine learning algorithms are constructed with a symmetric cost function optimization. In this case, the cost of either direction of the error is the same- an error of being X days late or X days early is the same. In our case, there is an error perceived to be costlier: we would rather deliver the order early than be late. We encoded this business logic in the machine learning models by creating a custom asymmetric cost function that penalizes late orders more than early orders.
 
 
+A.2 https://tech.oyorooms.com/how-we-rank-hotels-at-oyo-416e8363a1df
 
 A.4 Predict RTO at the time of placing a request and can depriortize. 
 
