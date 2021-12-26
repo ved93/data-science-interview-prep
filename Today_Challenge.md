@@ -91,7 +91,7 @@ for k in range(len(A+B)):
 Q. Ericsson. estimate the value of pi to the closest approximate value, you can use random number generator function as many times as required.   
 https://www.geeksforgeeks.org/estimating-value-pi-using-monte-carlo/
 
-Q. Design a parking system for airport, there are fixed no of slots for each type of vehicle and each #vehicle has a type and number. The amount charged is based on price per type per min. So when a #vehicle enters, it plate number is noted and if there is an available slot for that vehicle its #allowed to be parked.?
+Q. Design a parking system for airport, there are fixed no of slots for each type of vehicle and each # vehicle has a type and number. The amount charged is based on price per type per min. So when a # vehicle enters, it plate number is noted and if there is an available slot for that vehicle its # allowed to be parked.?
 
 Q. There are 100 ropes in a bag. In each step, two rope ends are picked at random, tied together and put back into a bag. The process is repeated until there are no free ends.
 What is the expected number of loops at the end of the process?   
@@ -180,7 +180,7 @@ Given a sorted integer array nums, where the range of elements are in the inclus
 
 
 def append_elem(lst, out):
-  #print(lst)
+  # print(lst)
   if len(lst) == 0:
     pass
   elif len(lst) == 1:
@@ -188,7 +188,7 @@ def append_elem(lst, out):
   else:
     out.append('{0}->{1}'.format(min(lst), max(lst)))
     
-  #print(out)
+  # print(out)
   return out
 
 
@@ -197,12 +197,12 @@ def missing_num_2(a, l, u):
   tmp_lst = []
   
   for i in range(l, u+1):
-    #print(i)
+    # print(i)
     if i not in a:
-      #print(i)
+      # print(i)
       tmp_lst.append(i)
     else:
-      #print(tmp_lst)
+      # print(tmp_lst)
       output = append_elem(tmp_lst, output)
       tmp_lst = []
         
