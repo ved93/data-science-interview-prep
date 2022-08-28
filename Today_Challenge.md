@@ -1,39 +1,30 @@
+https://stellarpeers.com/blog/
 
-Q.1 ABC is an e-commerce company. It gives expected delivery date for products you shop. It is found that if delivery date is long then there is some drop in conversion and RTO also starts to happen and if its too short then conversion rate increases but you miss the product delivery date more often. Now you want to increase the conversion rate and you are data scientist, how would you approach it? Which metric should i use for this task?
+https://www.ycombinator.com/library/1y-key-metrics
 
-Q.2 ABC is an airline/hotel company. Conversion depends ranking of hotels you show to the customer. So how would you rank the hotels? How to remove ranking bias as well?
- 
-
-Q.3 How to reduce cancellation in ecommerce/airline/grocery etc?
-
-Q.4 How to reduce RTO ?
-
-Q.5 How to reduce total loss occurred on RTO ?
-
-Q.6 Conv rate 30% and Revenue per conversion is 2 dollars, cost per click is 2 cents. Should I run the campaign, if yes whats my profit? At what cost we can keep running the campaign ?
-
-Q.7 ABC is an airline company. There are psuedo companies which continuosly hit your website to get the fare using bots. This results into bad customer experience as there will be false traffic and actual user will suffer. We also set dynamic price on the basis of traffic so its important to detect bot on the website. How would you detect a bot?
-
-Q.8 ABC is a OEM company. Their customers are other companies that distribute OEMs to the end users. These customer companies make their OEms purchases on basis of their demand. So some customers purchases once every month and some purchases once or twice a year. So now the problem is ABC OEMs wants to know if churn is happening and if so how they can prevent it? How would you predict churn?
+https://towardsdatascience.com/the-definitive-guide-to-designing-product-metrics-ba5d9e8e07e9
 
 
 
 
+Q. How would you design a metric to compare rankings of lists of shows for a given user?   
+A. 
+1) Develop a list of shows/movies that are representative of different taste categries 
+2) Obtain ranking of the items in the list from 2 users
+3) Use Spearman's rho (or other test that works with rankings) to assess dependence/conguence between the 2 people's rankings.
+4) Look at the mean average precision of the movies that the users watch out of the rankings. So if out of 10 recommended movies one user prefers the third and the other user prefers the sixth, the recommendation engine of the user who preferred the third would be better. 
 
 
 
+Q. How can you decide how long to run an experiment? What are some problems with just using a fixed p-value threshold and how do you work around them?   
+A. https://www.optimizely.com/sample-size-calculator/
 
+https://www.experimentcalculator.com/
 
-### Solutions
+https://help.optimizely.com/Analyze_Results/How_long_to_run_an_experiment
 
-A.1 There are two parts of the problem. 1. Optimizing the delivery time 2. Provide accurate estimate of delivery time. 3rd thing to do predicting shipping time and delivery date separately.
-1. We can leverage ML to predict future orders of items so we can make them avaliable to the nearest hubs. We can also do inventory predictions as well.
-2. Predict delivery date. Usually product decideds delivery date on the basis of some rules or based on intution. In Reality, it is pretty dynamic in nature and it also depends load and item availability in nearest hub . i.e. In sale there are huge orders to be delivered so to get better estimate ML based approach is needed.  
-It requires the consideration of several factors such as inventory levels, region, holidays, expected future demand, etc. These factors along with ample historical data make this problem a perfect use case for applying machine learning. 
-The vast majority of machine learning algorithms are constructed with a symmetric cost function optimization. In this case, the cost of either direction of the error is the same- an error of being X days late or X days early is the same. In our case, there is an error perceived to be costlier: we would rather deliver the order early than be late. We encoded this business logic in the machine learning models by creating a custom asymmetric cost function that penalizes late orders more than early orders.
+Q. Uber. You’re on the data science team and are responsible for figuring out surge pricing. Why does it need to exist and what metrics and data should you track?   
+A. It needs to exist to balance the demand-supply  
+ equation. Surge pricing motivates driver to go the   surge areas hence results in balancing the supply in high demand area. We need to track conversions in surge price points.
 
-
-A.2 https://tech.oyorooms.com/how-we-rank-hotels-at-oyo-416e8363a1df
-
-A.4 Predict RTO at the time of placing a request and can depriortize. 
 
