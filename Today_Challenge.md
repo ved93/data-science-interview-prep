@@ -1,15 +1,15 @@
 
-What are the differences between GloVe, word2vec and tf-idf?  
-Glove and word2vec are models that learn from vectors of words by taking into consideration their occurrence and co-occurrence information. While word2vec can be seen as a model that improves its ability to predict [ (target word | context words), and GloVe is modeled to do dimensionality reduction. This reduction is on the co-occurrence counts matrix [minimizing a loss - the reconstruction loss]. Reconstruction loss tries to find the lower-dimensional representations.
-
-TF-IDF is a way to judge the topic of an article. This is done by the kind of words it contains. Here words are given weight so it measures relevance, not frequency.
-
-Wordcounts are replaced with TF-IDF scores throughout dataset.
-
-Word2vec produces one vector per word, whereas tf-idf produces a score. Word2vec is great for going deeper into the documents we have and helps in identifying content and subsets of content. Its vectors represent each word’s context. (i.e the n-gram of which it is a part)   
 
 
-Q. How is GloVe different from word2vec?
-A. https://www.quora.com/How-is-GloVe-different-from-word2vec
+## Bidgeli
+- can you separate non-linear boundaries from logistic regression. Given a circle and square?
+- Find the probability of finding x people on platform where train leaves after every 6 hours. This is for problem solving.
+- Maximise the value of coins if you are playing a game against someone. You are starting the game and coins can be any denominations and coins are placed in a row. You can only pick from one of the ends. whats your strategy?
+- there are 100 people in the circle. Everyone shoots the next person in the circle. And this continues till only one person in the circle. Who will be the last person in the circle.
 
-Q.
+## Amazon
+
+## Oracle
+
+## Microsoft
+
