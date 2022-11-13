@@ -1,15 +1,30 @@
+https://stellarpeers.com/blog/
 
-What are the differences between GloVe, word2vec and tf-idf?  
-Glove and word2vec are models that learn from vectors of words by taking into consideration their occurrence and co-occurrence information. While word2vec can be seen as a model that improves its ability to predict [ (target word | context words), and GloVe is modeled to do dimensionality reduction. This reduction is on the co-occurrence counts matrix [minimizing a loss - the reconstruction loss]. Reconstruction loss tries to find the lower-dimensional representations.
+https://www.ycombinator.com/library/1y-key-metrics
 
-TF-IDF is a way to judge the topic of an article. This is done by the kind of words it contains. Here words are given weight so it measures relevance, not frequency.
-
-Wordcounts are replaced with TF-IDF scores throughout dataset.
-
-Word2vec produces one vector per word, whereas tf-idf produces a score. Word2vec is great for going deeper into the documents we have and helps in identifying content and subsets of content. Its vectors represent each word’s context. (i.e the n-gram of which it is a part)   
+https://towardsdatascience.com/the-definitive-guide-to-designing-product-metrics-ba5d9e8e07e9
 
 
-Q. How is GloVe different from word2vec?
-A. https://www.quora.com/How-is-GloVe-different-from-word2vec
 
-Q.
+
+Q. How would you design a metric to compare rankings of lists of shows for a given user?   
+A. 
+1) Develop a list of shows/movies that are representative of different taste categries 
+2) Obtain ranking of the items in the list from 2 users
+3) Use Spearman's rho (or other test that works with rankings) to assess dependence/conguence between the 2 people's rankings.
+4) Look at the mean average precision of the movies that the users watch out of the rankings. So if out of 10 recommended movies one user prefers the third and the other user prefers the sixth, the recommendation engine of the user who preferred the third would be better. 
+
+
+
+Q. How can you decide how long to run an experiment? What are some problems with just using a fixed p-value threshold and how do you work around them?   
+A. https://www.optimizely.com/sample-size-calculator/
+
+https://www.experimentcalculator.com/
+
+https://help.optimizely.com/Analyze_Results/How_long_to_run_an_experiment
+
+Q. Uber. You’re on the data science team and are responsible for figuring out surge pricing. Why does it need to exist and what metrics and data should you track?   
+A. It needs to exist to balance the demand-supply  
+ equation. Surge pricing motivates driver to go the   surge areas hence results in balancing the supply in high demand area. We need to track conversions in surge price points.
+
+
