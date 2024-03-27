@@ -1,255 +1,68 @@
-Q. Given a number n, return the number of lists of consecutive positive integers that sum up to n.
-For example, for n = 9, you should return 3 since the lists are: [2, 3, 4], [4, 5], and [9]. Can you do it in linear time?
-
-A. This is tricky problem. Search on leetcode for the solution
-
-
-Q. This problem was asked by Stripe.
-
-Write a program to generate the partitions for a number n. A partition for n is a list of positive integers that sum up to n. For example: if n = 4, we want to return the following partitions: [1,1,1,1], [1,1,2], [2,2], [1,3], and [4]. Note that a partition [1,3] is the same as [3,1] so only the former is included.
-
-Q. why do we use defaultdict?  
-A. A common problem that you can face when working with Python dictionaries is to try to access or modify keys that don’t exist in the dictionary. This will raise a KeyError and break up your code execution. To handle these kinds of situations, the standard library provides the Python defaultdict type, a dictionary-like class that’s available for you in collections.  
-The Python defaultdict type behaves almost exactly like a regular Python dictionary, but if you try to access or modify a missing key, then defaultdict will automatically create the key and generate a default value for it. This makes defaultdict a valuable option for handling missing keys in dictionaries.
-```
-# Defining a dict 
-d = defaultdict(list) 
-def_dict['one'] = 1  # Add a key-value pair
-def_dict['missing']  # Access a missing key returns an empty list
-def_dict['another_missing'].append(4)  # Modify a missing key
-
-# Defining the dict 
-# The default value is 0 
-d = defaultdict(int) 
-a_dct = defaultdict(float)   # The Default Value is "0.0"
-a_dct = defaultdict(str)   # The Default Value is ""
-
-# dict with lambda func which returns 100
-d = defaultdict(lambda : 100)
- ```
-Q. Given a function with inputs — an array with N randomly sorted numbers, and an int K, return output in an array with the K largest numbers.
-
-Q. check empty list  
-```
-if not list:
-    print('its empty')
-
-```
-
-Q. Asked by Paytm. You have been given two metrics. Write a code to identify if thet are symmetric metrics.  
-A. My soln. Need to refine
-``` 
-mat = np.matrix(2,3,1)
-flag = 0
-for i in range(2,mat.shape[0]):
-    for j in range(1,mat.shape[0]):
-        if mat[i][j] = mat[j][i]:
-            print()
-            flag = 1
-        else:
-            flag =0
-            print('not symmetric')
-        
-if flag == 1:
-    print('symmetric')        
-``` 
 
-Q. Asked by Delhivery. Write a programme to write factorial. Implement both recursion and dynamic programming soln.
-
-Q. Paytm. Count digit's(0-9) occurence in numbers from 1 to 100.  
-```
-store_num = []
-for i in range(1,101):
-    store_num.extend(list(str(i)))
-#     list(str(i))
-Counter(store_num)
-```
+Q. Assume we have a classifier that produces a score between 0 and 1 for the probability of a particular loan application being fraudulent. In this scenario: a) what are false positives, b) what are false negatives, and c) what are the trade-offs between them in terms of dollars and how should the model be weighted accordingly?
 
-Q. Ericsson. Write a programme to check two sorted array to merge into one. Just a simple idea.
-```
-# A
-# B
+A. FP: False predicted fraudulent
+FN: Falsely predicted Non-fraud
+Here, Recall is very important metric here. So model should be weighted for FN. FN are the cases where fraud actually happened but model didn't detect and Bank ended up losing money. So we should choose a model where we can minimise FN at the expense of FP.
 
-# C= []
-# i = 0
-# j = 0
+Q. Why lasso makes coeficients zero?  
+*Explains Ghraphically*
+https://www.quora.com/Why-is-it-that-the-lasso-unlike-ridge-regression-results-in-coefficient-estimates-that-are-exactly-equal-to-zero
+*Explains Mathematically*
+https://stats.stackexchange.com/questions/176599/why-will-ridge-regression-not-shrink-some-coefficients-to-zero-like-lasso
 
-for k in range(len(A+B)):
-    if A[i] <= B[j]:
-        C[k] = A[i]
-        i= i+1
-    else:
-        C[k] = B[j]
-        j = j+1
 
-    if len(A) <= i:
-        C.append(B[j+1:])
-    if len(B) <= j:
-        C.append(A[i+1:])     
-```
 
-Q. Ericsson. estimate the value of pi to the closest approximate value, you can use random number generator function as many times as required.   
-https://www.geeksforgeeks.org/estimating-value-pi-using-monte-carlo/
+---
+Q. Assume we have some credit model, which has accurately calibrated (up to some error) score of how credit-worthy any individual person is. For example, if the model’s estimate is 92% then we can assume the actual score is between 91 and 93. If we take 92 as a score cutoff and deem everyone above that score as credit-worthy, are we over-estimating or underestimating the actual population’s credit score?
 
-Q. Design a parking system for airport, there are fixed no of slots for each type of vehicle and each #vehicle has a type and number. The amount charged is based on price per type per min. So when a #vehicle enters, it plate number is noted and if there is an available slot for that vehicle its #allowed to be parked.?
+A. 
 
-Q. There are 100 ropes in a bag. In each step, two rope ends are picked at random, tied together and put back into a bag. The process is repeated until there are no free ends.
-What is the expected number of loops at the end of the process?   
-A. https://math.stackexchange.com/questions/2209/expected-number-of-loops
+---
+Q. What is user churn and how can you build a model to predict whether a user will churn? What features would you include in the model and how do you assess importance?
 
-```
-import numpy as np
-import random 
+---
+Q. Assume we have a classifier that produces a score between 0 and 1 for the probability of a particular loan application behind a fraud. Say that for each application’s score, we take the square root of that score. How would the ROC curve change? If it doesn’t change, what kinds of functions would change the curve?
 
+A. ROC is a ranking metrics so it wont change if you make same transformation for every score.
 
+---
 
-# print(random.randint(1,200))
-l = {}
-last_end = 0
-loop = 0
+Q.Difference between convex and non-convex cost function; what does it mean when a cost function is non-convex?(Amazon)  
 
-num_list=list(range(0,200))
+Q. Describe the criterion for a particular model selection. Why is dimension reduction important?
 
-print(random.choices(num_list,k=2))
+Q.What are the assumptions for logistic and linear regression?
 
-last_end,last_str = 0,0
-m =0
-for i in range(1,101):
-  # endp=random.randint(1,200)
-  # strp=random.randint(1,200)
-  ends=random.sample(num_list,k=2)
-  
+Q.If you can build a perfect (100% accuracy) classification model to predict some customer behaviour, what will be the problem in application?  
+A. There can be multiple scenarios  
+1. target-rate < 1% : If its fraud application. Then model might of no use.
+2. Overfitting: It's highly difficult to build such model. So if its not validated well then it might not do well on test data
 
-  print(ends)
-  num_list.remove(ends[0])
-  num_list.remove(ends[1])
+Q. Compare Lasso and Ridge Regression. (Amazon) 
+Q. What’s the difference between MLE and MAP inference?(Amazon)  
+Q. When users are navigating through the Amazon website, they are performing several actions. What is the best way to model if their next action would be a purchase?  
+Q.How does K-means work? What kind of distance metric would you choose? What if different features have different dynamic range?
+Q. What are some benefits and drawbacks of discriminative and generative models?  
+Q. Difference between convex and non-convex cost function ; what does it mean when a cost function is non-convex?  
+A. Convex: global optimum no local optimum
 
-  if last_str in ends and last_end in ends:
-    print('was here')
-    loop = loop+1
+Q. why should we retrain the model after model selection / model evaluation?   
+In a learning curve, the performance of a model both on the training and validation set is plotted as a function of the training set size. Fig. 1 shows a typical learning curve: The training score (performance on the training set) decreases with increasing training set size while the validation score increases at the same time. High training score and low validation score at the same time indicates that the model has overfit the data, i.e., has adapted too well to the specific training set samples. As the training set increases, overfitting decreases, and the validation score increases.
+Especially for data-hungry machine learning models, the learning curve might not yet have reached a plateau at the given training set size, which means the generalization error might still decrease when providing more data to the model. Hence, it seems reasonable to increase the training set (by adding the validation set) before estimating the generalization error on the test set, and to further take advantage of the test set data for model fitting before shipping the model. Whether or not this strategy is needed depends strongly on the slope of the learning curve at the initial training set size.
 
-  elif last_str in ends or last_end in ends:
-    if   last_str in ends:
-      l[m]=[last_str,last_end]
+Q. Bias Variance in Learning Curve  
+A. Learning curves further allow to easily illustrate the concept of (statistical) bias and variance. Bias in this context refers to erroneous (e.g. simplifying) model assumptions, which can cause the model to underfit the data. A high-bias model does not adequately capture the structure present in the data. Variance on the other hand quantifies how much the model varies as we change the training data. A high-variance model is very sensitive to small fluctuations in the training data, which can cause the model to overfit. The amount of bias and variance can be estimated using learning curves: A model exhibits high variance, but low bias if the training score plateaus at a high level while the validation score at a low level, i.e., if there is a large gap between training and validation score. A model with low variance but high bias, in contrast, is a model where both training and validation score are low, but similar. Very simple models are high-bias, low-variance while with increasing model complexity they become low-bias, high-variance.
 
+Q. Why is logistic regression considered a linear model?  
+A. Logistic regression is considered linear because the decision boundary of a logistic model is linear in the feature space. Logistic regression is considered a generalized linear model because the outcome always depends on the sum of the inputs and parameters. Or in other words, the output cannot depend on the product (or quotient, etc.) of its parameters!  
+Logistic regression is a *generalized linear model*. Generalized linear models are, despite their name, not generally considered linear models. They have a linear component, but the model itself is nonlinear due to the nonlinearity introduced by the link function.
 
+Q. You have a dataset of a million example digits, what are some desirable qualities due to which you would pick a KNN classifier for digit recognition ?  
+A. Lavanya.The following are some features of the KNN classifier The KNN classifier is simple to implement. Prediction could be relatively inefficient with the KNN classifier. While there is no training effort with the KNN algorithm, prediction involves scanning the entire training data to find the K-nearest neighbours to aggregate their value. With efficient implementation, such as a KD-tree the prediction time could be improved. With a high value of K, the decision boundary becomes smoother while the decision boundary is more noisy with a low value of K. The KNN-algorithm is non-parametric and can fit highly non-linear decision boundaries.
 
+Q. Bias-variance trade-off in MSE
 
+A. https://www.countbayesie.com/blog/2019/1/30/a-deeper-look-at-mean-squared-error
 
-  if ends[0] % 2 == 0:
-    last_str = ends[0]-1
-  else:
-    last_str = ends[0]+1
-
-
-  if ends[1] % 2 == 0:
-    last_end = ends[1]-1
-  else:
-    last_end = ends[1]+1
-
-
-  l[m]=[last_str,last_end]
-  m= m+1
-    
-    
-
-  # last_str = ends[0]
-  # last_end = ends[1]
-
-print(loop)
-
-```
-
-
-Q. 
-
-
-Q. Check permutation of string can become a palindrome?  
-Q. 
-
-'''
-Given a sorted integer array nums, where the range of elements are in the inclusive range [lower, upper]
- return its missing ranges.
-
-    Example:
-
-    Input: nums = [0, 1, 3, 50, 75], lower = 0 and upper = 99,
-    Output: ["2", "4->49", "51->74", "76->99"]
-'''
-
-
-
-def append_elem(lst, out):
-  #print(lst)
-  if len(lst) == 0:
-    pass
-  elif len(lst) == 1:
-      out.append(lst[0])
-  else:
-    out.append('{0}->{1}'.format(min(lst), max(lst)))
-    
-  #print(out)
-  return out
-
-
-def missing_num_2(a, l, u):
-  output = []
-  tmp_lst = []
-  
-  for i in range(l, u+1):
-    #print(i)
-    if i not in a:
-      #print(i)
-      tmp_lst.append(i)
-    else:
-      #print(tmp_lst)
-      output = append_elem(tmp_lst, output)
-      tmp_lst = []
-        
-  if len(tmp_lst) != 0:
-    output = append_elem(tmp_lst, output)
-    
-  return output
-
-
-
-print(missing_num_2([0, 1, 3, 50, 75],0,99) )   
-
-'''
-def missing_num(a,l,u):
-  b = []
-  for i in range(l,len(a)):
-    if a[i] == l:
-      l=l+1
-      continue
-    else:
-      
-          #     if i+1 == len(a):
-          # r='{}->{}'.format(l,a[i+1]-1)
-          # # print(r)
-          # b.append(r)
-          
-          # return b
-      
-      if a[i+1] != (l+1):
-        r='{}->{}'.format(l,a[i+1]-1)
-        # print(r)
-        b.append(r)
-        
-      else:  
-        b.append(str(l))
-      l = l+1
-  
-  return b
-       
-
-print(missing_num([0, 1, 3, 50, 75],0,99) )      '''
-
-
-
-
-
-
-
-### Solutions
 
