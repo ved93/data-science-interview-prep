@@ -1,83 +1,78 @@
 
+https://gto76.github.io/python-cheatsheet/
 
-Q. How can you decide how long to run an experiment? What are some problems with just using a fixed p-value threshold and how do you work around them?
+1. Create a list with zero or None. `l = [None]*n`
+2. Sort a dictionary on the basis of values and return keys
+`bst_ind =sorted(res, key = res.get, reverse =True)`  
+`tp =sorted(d.items(), key = lambda k : (k[1],k[0]), reverse=True)`
+   
+3. Get a key from value in dictionary. Convert into key list and value list then get index of particular value from list.Use that index in key list to get the key    
 
-A. There are few ways to answer this question:
+`list out keys and values separately 
+key_list = list(my_dict.keys()) 
+val_list = list(my_dict.values()) 
+print(key_list[val_list.index(100)]) 
+print(key_list[val_list.index(112)])`
 
-1. Keep running your experiment till you get 90%-95% statistical significance.
-2. calculate effect size for your experiment using tools like [optimizely](https://www.optimizely.com/sample-size-calculator/), [experimentcalculator](https://www.experimentcalculator.com/) 
-3. Atleast have 1000 conversions
-
-If we use just fixed p-value threshold, then it might results into p-value hacking. To work around them we can calculate effect size separately.
-
----
-Q. A coin was flipped 1000 times, and 560 times it showed up heads. Do you think the coin is biased? Why or why not?(Google)
-
-A. The variance for # of heads in 1000 flips of a fair coin would be (0.5)(1–0.5)(1000) = 250 and the standard deviation is the square root of the variance: √250 = 15.81+. And of course the mean would be (0.5)(1000) = 500.
-
-So 560 is (560–500)/15.81 = +3.794… standard deviations.
-
-A 95% confidence interval is ±1.96 standard deviations, which would be ±30.99 or between 469.01 and 530.99. So 560 heads is a BIG outlier. The coin probably is biased.
-
-On the other hand, 56 heads in 100 trials - the same proportion with a smaller sample - would only be +1.2 standard deviations (mean is 50, standard deviation is 5.) So that would be too small of a sample to conclude that the coin is biased.
-
----
-Q. Uber. Say you need to produce a binary classifier for fraud detection. What metrics would you look at, how is each defined, and what is the interpretation of each one?
-
-A. I have worked a bit in the fraud domain, and we definitely look at ROC AUC as our primary metric. The fact that it's not sensitive to class imbalance can be a feature, not a bug. Consider retraining models on a monthly basis, and trying to compare performance across time. PR-AUC will be driven by a combination of model performance and underlying fraud rate, whereas ROC-AUC is robust to variable fraud rate.
-
-Second, the business typically makes a decision based on the impact to good customers, or in other words, FPR. Then, the important question becomes: at this given FPR, how much of the fraud am I capturing? This is precisely what the ROC curve tells us. Also note the host said they care more about partial ROC AUC, and this is likely for the same reason: they care about very low FPR, so only the area under this section of the curve is most relevant.
-
-That said, if you instead have a model that's evaluating e.g. every hour and sending accounts for human investigation, then your primary bottle-neck is investigator bandwidth, and in this case, you might focus on Precision/Recall metrics as you will likely have a target precision.
-
----
-Q. Facebook.Imagine the social graphs for both Facebook and Twitter. How do they differ? What metric would you use to measure how skewed the social graphs are?
-
-A. First you should recognize that Twitter is *following* vs. a FB friendship (connections are 2-way street). Second part has to do with comparing the "equality" of Twitter vs FB social graph. In TW, you have a small % with a TON of connections (and then a long tail), and FB you have a much less extreme version of that. Think how you would plot out distribution of connections per user and how FB/TW are different.
-
----
-Q. What does it mean for an estimator to be unbiased? What about consistent? Give examples of an unbiased but not consistent estimator, as well as a biased but consistent estimator.
-
-A. https://stats.stackexchange.com/questions/31036/what-is-the-difference-between-a-consistent-estimator-and-an-unbiased-estimator
-
----
-Q. There are two games involving dice that you can play. In the first game, you roll two die at once and get the dollar amount equivalent to the product of the rolls. In the second game, you roll one die and get the dollar amount equivalent to the square of that value. Which has the higher expected value and why?
-
-A. 
-
----
-Q. Google. Say you are running a multiple linear regression and believe there are several predictors that are correlated. How will the results of the regression be affected if they are indeed correlated? How would you deal with this problem?
-
-A. Interpretability of coefficients wont make sense and coefficients will be unstable
-
----
-Q. Uber.Say you are given a random Bernoulli trial generator. How would you generate values from a standard normal distribution?
-
-A.
-
----
-Q. What are MLE and MAP? What is the difference between the two?  
-A. [Check here](https://www.quora.com/What-is-the-difference-between-Maximum-Likelihood-ML-and-Maximum-a-Posteriori-MAP-estimation)  
-
-Q. Why does gradient point the direction of steepest ascent?   
-A. https://www.khanacademy.org/math/multivariable-calculus/multivariable-derivatives/gradient-and-directional-derivatives/v/why-the-gradient-is-the-direction-of-steepest-ascent
-
-https://www.quora.com/Can-you-explain-intuitively-or-with-an-example-why-the-gradient-points-to-the-direction-of-steepest-ascent  
-https://www.quora.com/What-is-an-intuitive-explanation-for-why-the-gradient-points-in-the-direction-of-steepest-ascent  
-https://betterexplained.com/articles/vector-calculus-understanding-the-gradient/   
-https://math.stackexchange.com/questions/223252/why-is-gradient-the-direction-of-steepest-ascent
-https://www.khanacademy.org/math/multivariable-calculus/multivariable-derivatives/gradient-and-directional-derivatives/v/directional-derivative
-
-Q. what is poisson distribution?  
-A. The Poisson distribution is the discrete probability distribution of the number of events occurring in a given time period, given the average number of times the event occurs over that time period. A certain fast-food restaurant gets an average of 3 visitors to the drive-through per minute.
-The number of cases a doctor can handle in a day is a positive number, this can be modelled by a Poisson distribution.  
-*Additional notes*:
-Normal distribution can be used when we have a real number taking values between negative and positive infinity. Clearly this is not the case for the number of cases taken by a doctor per day.  
-Bernoulli distribution is used to model binary random variables, for instance the result of a coin toss. Hence, it cannot be used to model a random variable that is not binary.
+4. Using previous and current values is also a good way to solve problems. i.e. Fibonacci problems
+5. 
+6. Dont hesitate to use brute force solution. Just tell in advance.
+7. Two sum and its different variants are good for multiple problems. Write twom pointers solution for wto sum problem. 
+8. A quick sort/merge sort have complexity nlogn
+9.  If an array is sorted then two-pointer sol is good.
+10. hash-map is good concepts to look up values
+11. Two-pointers method's complexity is O(n)
+12. if youn have sorted list/array, think of using 2 pointers method
+13. 3 sum can be easily converted to 2 sum. Use these heuristics.
+14. Dont forget extreme cases
+15. Accessing qa func from a class.Then use self.func
+16. If you need to count ways then think of dp and recursion
+17. Recursion is weak part. Solve some problems(Fibonacci,Factorial etc) on recursion and read the blog.
+18. Revisit Binary search algo and think about use-cases. Two pointer method. Just write the code for it.
+19. Write a program for merge sort.
+20. two sum problem's 2 pointer solution is good. Implement by yourself bcz it has details whihc you tend to ignore if you dont implement gtourself.
+21. If you are repeatedly partitioning your data by some factor, timecomplexity is going to be log n. i.e. 
+    ```
+    for i in range(0,n,step = 2*i):
+    ```
+    Time Complexity of a loop is considered as O(Logn) if the loop variables is divided / multiplied by a constant amount.
+22. There are two ways to use divide and conquer or reducing the problem  
+    1. Use of left and right with while loop 
+    2. Use recursion   
+23. ede 
 
 
-Q. You are doing an experiment to determine whether a new coffee recipe you invented, that is more healthy is actually likable by people. You want to make sure people like this coffee atleast as much as the previous coffee by looking at the average rating they give. Which kind of test would make more sense in this setting ?  
-A. If you do a two sided test, your null hypothesis will be, people like the old recipe as much as the newer recipe. If you measure the ratings and compute the p value, you will be in a position to reject the null hypothesis that people like the old recipe as much as the newer one.
 
-With a one sided test, the null hypothesis will be : people like the previous recipe better than the current recipe. If you are able to get an appropriate p value with the adequate sample size, you can conclude that the people do not like the previous coffee more than the current coffee. Note that you still cannot conclude that they like the new one more.
-https://stats.idre.ucla.edu/other/mult-pkg/faq/general/faq-what-are-the-differences-between-one-tailed-and-two-tailed-tests/
+
+
+
+
+### Input methods in python
+
+
+
+```
+def create_array(size):
+    return [random.choice(list(range(10))) for _ in range(size)]
+
+seq = create_array(100000)
+```
+
+
+
+
+### Links to revisit
+
+1. Visualisation of recursion Fibonacci *Highly recommended* https://www.cs.usfca.edu/~galles/visualization/DPFib.html
+2. [Recursion-How to think](https://medium.com/@daniel.oliver.king/getting-started-with-recursion-f89f57c5b60e)  
+3. https://www.khanacademy.org/computing/computer-science/algorithms/recursive-algorithms/a/recursion
+4. https://indepth.dev/dijkstra-was-right-recursion-should-not-be-difficult/
+5. https://leetcode.com/problems/min-cost-climbing-stairs/discuss/657490/Python-solution-from-a-beginner-(some-easy-steps-to-follow-to-solve-dp)
+6. [Dynamic Programming](https://leetcode.com/discuss/general-discussion/475924/my-experience-and-notes-for-learning-dp)
+7. [Dynamic Programming pattern](https://leetcode.com/discuss/general-discussion/458695/dynamic-programming-patterns)
+8. https://leetcode.com/problems/house-robber/discuss/156523/From-good-to-great.-How-to-approach-most-of-DP-problems.
+9. https://leetcode.com/problems/longest-palindromic-subsequence/discuss/222605/dp-problem-classifications-helpful-notes
+10. https://softwareengineering.stackexchange.com/questions/146021/determining-if-an-algorithm-is-o-log-n
+11. 
+
+
