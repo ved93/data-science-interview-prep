@@ -1,22 +1,15 @@
 
 
-### AUC
-the AUC of a classifier is equal to the probability that the classifier will rank a randomly chosen positive example higher than a randomly chosen negative example, i.e. 𝑃(score(𝑥+)>score(𝑥−))
 
+## Bidgeli
+- can you separate non-linear boundaries from logistic regression. Given a circle and square?
+- Find the probability of finding x people on platform where train leaves after every 6 hours. This is for problem solving.
+- Maximise the value of coins if you are playing a game against someone. You are starting the game and coins can be any denominations and coins are placed in a row. You can only pick from one of the ends. whats your strategy?
+- there are 100 people in the circle. Everyone shoots the next person in the circle. And this continues till only one person in the circle. Who will be the last person in the circle.
 
-https://www.kaggle.com/vipulgandhi/how-to-choose-right-metric-for-evaluating-ml-model
+## Amazon
 
+## Oracle
 
-### Random Forest
-There are 10 students- *# trees*  
-No-one was there for whole year- *sample data*  
-Everyone took different subjects but not all subjects- *# features*   
+## Microsoft
 
-One question asked
-and we have done majority votes on responses
-
-
-
-
-
-### Logistic Regression
