@@ -1,38 +1,78 @@
 
+https://gto76.github.io/python-cheatsheet/
 
-
-### Fraud Prediction
-There are many approaches to determining whether a particular transaction is fraudulent. From rule based systems to machine learning models — each method tends to work best under certain conditions. Successful anti-fraud systems should reap the benefits of all the approaches and utilize them where they fit the problem best.  
-We can start with connection analysis using txn analysis. Each transaction can be described by a set of attributes.The processed txn shares an IP address, email address and some cookies with several other successfull txn.In short, it’s all about connecting transactions using some attribute as a matching key. This approach, although simple in principle, provides valuable context. After extracting the network’s features, we can then feed them to rule based systems or ML models  
-it’s quite rare for people to possess a great number of credit cards, this type of network might be an example of carding fraud. In such attacks, fraudsters use stolen credit card credentials to perform numerous transactions. We can distinguish between normal traffic and carding patterns (few people, numerous cards and transactions) easily when having data structured as a network. After querying our graph and encountering a risky pattern, we can add suspicious attribute values to blacklists.   
-there are no hard rules about what is and what is not fraudulent behavior. If we can see multiple transactions coming out of a common IP address it can mean a fraud attack, but it can also mean employees using their corporate, proxied network to make purchases. It’s important to take as many factors in as possible — missing out on some may cause serious distortions in the way we perceive the data through our networks. A good example of a crucial factor is time — someone making a 10th transaction on the same day and cleaning browser cookies after each one will look exactly the same as a legitimate user making a 10th purchase in the same year, whose cookies naturally expire between consequent transactions. Context is everything.
-Summary:
-how connection analysis is used in fraud detection and what are the associated benefits & challenges
-how to interpret networks in the context of catching fraud
-how transactions’ attributes are used to organize data into networks
-how to implement attribute matching in Python’s Networkx library
-
+1. Create a list with zero or None. `l = [None]*n`
+2. Sort a dictionary on the basis of values and return keys
+`bst_ind =sorted(res, key = res.get, reverse =True)`  
+`tp =sorted(d.items(), key = lambda k : (k[1],k[0]), reverse=True)`
    
+3. Get a key from value in dictionary. Convert into key list and value list then get index of particular value from list.Use that index in key list to get the key    
+
+`list out keys and values separately 
+key_list = list(my_dict.keys()) 
+val_list = list(my_dict.values()) 
+print(key_list[val_list.index(100)]) 
+print(key_list[val_list.index(112)])`
+
+4. Using previous and current values is also a good way to solve problems. i.e. Fibonacci problems
+5. 
+6. Dont hesitate to use brute force solution. Just tell in advance.
+7. Two sum and its different variants are good for multiple problems. Write twom pointers solution for wto sum problem. 
+8. A quick sort/merge sort have complexity nlogn
+9.  If an array is sorted then two-pointer sol is good.
+10. hash-map is good concepts to look up values
+11. Two-pointers method's complexity is O(n)
+12. if youn have sorted list/array, think of using 2 pointers method
+13. 3 sum can be easily converted to 2 sum. Use these heuristics.
+14. Dont forget extreme cases
+15. Accessing qa func from a class.Then use self.func
+16. If you need to count ways then think of dp and recursion
+17. Recursion is weak part. Solve some problems(Fibonacci,Factorial etc) on recursion and read the blog.
+18. Revisit Binary search algo and think about use-cases. Two pointer method. Just write the code for it.
+19. Write a program for merge sort.
+20. two sum problem's 2 pointer solution is good. Implement by yourself bcz it has details whihc you tend to ignore if you dont implement gtourself.
+21. If you are repeatedly partitioning your data by some factor, timecomplexity is going to be log n. i.e. 
+    ```
+    for i in range(0,n,step = 2*i):
+    ```
+    Time Complexity of a loop is considered as O(Logn) if the loop variables is divided / multiplied by a constant amount.
+22. There are two ways to use divide and conquer or reducing the problem  
+    1. Use of left and right with while loop 
+    2. Use recursion   
+23. ede 
 
 
-### Malicious/Fishing Prediction    
 
 
-### Anomaly Detection
 
-Before getting started, it is important to establish some boundaries on the definition of an anomaly. Anomalies can be broadly categorized as:
 
-Point anomalies: A single instance of data is anomalous if it's too far off from the rest. Business use case: Detecting credit card fraud based on "amount spent."
-Contextual anomalies: The abnormality is context specific. This type of anomaly is common in time-series data. Business use case: Spending $100 on food every day during the holiday season is normal, but may be odd otherwise.
-Collective anomalies: A set of data instances collectively helps in detecting anomalies. Business use case: Someone is trying to copy data form a remote machine to a local host unexpectedly, an anomaly that would be flagged as a potential cyber attack.
-Best steps to prevent anomalies is to implement policies or checks that can catch them during the data collection stage. Unfortunately, you do not often get to collect your own data, and often the data you're mining was collected for another purpose. About 68% of all the data points are within one standard deviation from the mean. About 95% of the data points are within two standard deviations from the mean. Finally, over 99% of the data is within three standard deviations from the mean. When the value deviate too much from the mean, let’s say by ± 4σ, then we can considerate this almost impossible value as anomaly. (This limit can also be calculated using the percentile).
 
-Statistical methods
-Statistically based anomaly detection uses this knowledge to discover outliers. A dataset can be standardized by taking the z-score of each point. A z-score is a measure of how many standard deviations a data point is away from the mean of the data. Any data-point that has a z-score higher than 3 is an outlier, and likely to be an anomaly. As the z-score increases above 3, points become more obviously anomalous. A z-score is calculated using the following equation. A box-plot is perfect for this application.
+### Input methods in python
 
-Metric method
-Judging by the number of publications, metric methods are the most popular methods among researchers. They postulate the existence of a certain metric in the space of objects, which helps to find anomalies. Intuitively, the anomaly has few neighbors in the instannce space, and a typical point has many. Therefore, a good measure of anomalies can be, for example, the «distance to the k-th neighbor». (See method: Local Outlier Factor). Specific metrics are used here, for example Mahalonobis distance. Mahalonobis distance is a measure of distance between vectors of random variables, generalizing the concept of Euclidean distance. Using Mahalonobis distance, it is possible to determine the similarity of unknown and known samples. It differs from Euclidean distance in that it takes into account correlations between variables and is scale invariant. alt text
 
-The most common form of clustering-based anomaly detection is done with prototype-based clustering.
 
-Using this approach to anomaly detection, a point is classified as an anomaly if its omission from the group significantly improves the prototype, then the point is classified as an anomaly. This logically makes sense. K-means is a clustering algorithm that clusters similar points. The points in any cluster are similar to the centroid of that cluster, hence why they are members of that cluster. If one point in the cluster is so far from the centroid that it pulls the centroid away from it's natural center, than that point is literally an outlier, since it lies outside the natural bounds for the cluster. Hence, its omission is a logical step to improve the accuracy of the rest of the cluster. Using this approach, the outlier score is defined as the degree to which a point doesn't belong to any cluster, or the distance it is from the centroid of the cluster. In K-means, the degree to which the removal of a point would increase the accuracy of the centroid is the difference in the SSE, or standard squared error, or the cluster with and without the point. If there is a substantial improvement in SSE after the removal of the point, that correlates to a high outlier score for that point. More specifically, when using a k-means clustering approach towards anomaly detection, the outlier score is calculated in one of two ways. The simplest is the point's distance from its closest centroid. However, this approach is not as useful when there are clusters of differing densities. To tackle that problem, the point's relative distance to it's closest centroid is used, where relative distance is defined as the ratio of the point's distance from the centroid to the median distance of all points in the cluster from the centroid. This approach to anomaly detection is sensitive to the value of k. Also, if the data is highly noisy, then that will throw off the accuracy of the initial clusters, which will decrease the accuracy of this type of anomaly detection. The time complexity of this approach is obviously dependent on the choice of clustering algorithm, but since most clustering algorithms have linear or close to linear time and space complexity, this type of anomaly detection can be highly efficient.
+```
+def create_array(size):
+    return [random.choice(list(range(10))) for _ in range(size)]
+
+seq = create_array(100000)
+```
+
+
+
+
+### Links to revisit
+
+1. Visualisation of recursion Fibonacci *Highly recommended* https://www.cs.usfca.edu/~galles/visualization/DPFib.html
+2. [Recursion-How to think](https://medium.com/@daniel.oliver.king/getting-started-with-recursion-f89f57c5b60e)  
+3. https://www.khanacademy.org/computing/computer-science/algorithms/recursive-algorithms/a/recursion
+4. https://indepth.dev/dijkstra-was-right-recursion-should-not-be-difficult/
+5. https://leetcode.com/problems/min-cost-climbing-stairs/discuss/657490/Python-solution-from-a-beginner-(some-easy-steps-to-follow-to-solve-dp)
+6. [Dynamic Programming](https://leetcode.com/discuss/general-discussion/475924/my-experience-and-notes-for-learning-dp)
+7. [Dynamic Programming pattern](https://leetcode.com/discuss/general-discussion/458695/dynamic-programming-patterns)
+8. https://leetcode.com/problems/house-robber/discuss/156523/From-good-to-great.-How-to-approach-most-of-DP-problems.
+9. https://leetcode.com/problems/longest-palindromic-subsequence/discuss/222605/dp-problem-classifications-helpful-notes
+10. https://softwareengineering.stackexchange.com/questions/146021/determining-if-an-algorithm-is-o-log-n
+11. 
+
+
