@@ -1,56 +1,78 @@
 
-Q.1 A mixture of 40 litres of milk and water contains 10% water. What q might.How much water should be added so that the water is 20% in the new mixture?  
+https://gto76.github.io/python-cheatsheet/
 
-Q.2 If there are 2 containers having a mixture of milk and water in the ratio of 5:3 and 2:3, in what ratio should the two mixtures be mixed so that the resulting mixtures have the milk and water in the same proportions?  
+1. Create a list with zero or None. `l = [None]*n`
+2. Sort a dictionary on the basis of values and return keys
+`bst_ind =sorted(res, key = res.get, reverse =True)`  
+`tp =sorted(d.items(), key = lambda k : (k[1],k[0]), reverse=True)`
+   
+3. Get a key from value in dictionary. Convert into key list and value list then get index of particular value from list.Use that index in key list to get the key    
 
-Q.3 Suppose that “I Love Discrete Math” T-shirts come in five different sizes: S,M,L,XL, and XXL. Each size comes in four colors (white, red, green, and black), except XL, which comes only in red,green, and black, and XXL, which comes only in green and black.What is the minimum number of stores that the campus book store needs to stock to have one of each size and color available?
+`list out keys and values separately 
+key_list = list(my_dict.keys()) 
+val_list = list(my_dict.values()) 
+print(key_list[val_list.index(100)]) 
+print(key_list[val_list.index(112)])`
 
-Q.4 a) How many cards must be selected from a standard
-deck of 52 cards to guarantee that at least three cards of the same suit are chosen?
- b) How many must be selected to guarantee that at least three
-hearts are selected?
+4. Using previous and current values is also a good way to solve problems. i.e. Fibonacci problems
+5. 
+6. Dont hesitate to use brute force solution. Just tell in advance.
+7. Two sum and its different variants are good for multiple problems. Write twom pointers solution for wto sum problem. 
+8. A quick sort/merge sort have complexity nlogn
+9.  If an array is sorted then two-pointer sol is good.
+10. hash-map is good concepts to look up values
+11. Two-pointers method's complexity is O(n)
+12. if youn have sorted list/array, think of using 2 pointers method
+13. 3 sum can be easily converted to 2 sum. Use these heuristics.
+14. Dont forget extreme cases
+15. Accessing qa func from a class.Then use self.func
+16. If you need to count ways then think of dp and recursion
+17. Recursion is weak part. Solve some problems(Fibonacci,Factorial etc) on recursion and read the blog.
+18. Revisit Binary search algo and think about use-cases. Two pointer method. Just write the code for it.
+19. Write a program for merge sort.
+20. two sum problem's 2 pointer solution is good. Implement by yourself bcz it has details whihc you tend to ignore if you dont implement gtourself.
+21. If you are repeatedly partitioning your data by some factor, timecomplexity is going to be log n. i.e. 
+    ```
+    for i in range(0,n,step = 2*i):
+    ```
+    Time Complexity of a loop is considered as O(Logn) if the loop variables is divided / multiplied by a constant amount.
+22. There are two ways to use divide and conquer or reducing the problem  
+    1. Use of left and right with while loop 
+    2. Use recursion   
+23. ede 
 
-Q.5 Suppose that a cookie shop has four different
-kinds of cookies. How many different ways can six
-cookies be chosen? 
-
-Q.6 If 3 men or 4 women can do a piece of work in 16 days, in how many days can 12 men and 8 women do the same piece of work?  
- 
-
- 
 
 
 
 
 
 
+### Input methods in python
+
+
+
+```
+def create_array(size):
+    return [random.choice(list(range(10))) for _ in range(size)]
+
+seq = create_array(100000)
+```
 
 
 
 
+### Links to revisit
+
+1. Visualisation of recursion Fibonacci *Highly recommended* https://www.cs.usfca.edu/~galles/visualization/DPFib.html
+2. [Recursion-How to think](https://medium.com/@daniel.oliver.king/getting-started-with-recursion-f89f57c5b60e)  
+3. https://www.khanacademy.org/computing/computer-science/algorithms/recursive-algorithms/a/recursion
+4. https://indepth.dev/dijkstra-was-right-recursion-should-not-be-difficult/
+5. https://leetcode.com/problems/min-cost-climbing-stairs/discuss/657490/Python-solution-from-a-beginner-(some-easy-steps-to-follow-to-solve-dp)
+6. [Dynamic Programming](https://leetcode.com/discuss/general-discussion/475924/my-experience-and-notes-for-learning-dp)
+7. [Dynamic Programming pattern](https://leetcode.com/discuss/general-discussion/458695/dynamic-programming-patterns)
+8. https://leetcode.com/problems/house-robber/discuss/156523/From-good-to-great.-How-to-approach-most-of-DP-problems.
+9. https://leetcode.com/problems/longest-palindromic-subsequence/discuss/222605/dp-problem-classifications-helpful-notes
+10. https://softwareengineering.stackexchange.com/questions/146021/determining-if-an-algorithm-is-o-log-n
+11. 
 
 
-
-## Solutions
-A.2 Mixture-1: Milk: Water = 5:3 i.e. Milk:Total = 5:8 i.e. a = 5/8
-Mixture-2: Milk: Water = 2:3 i.e. Milk:Total = 2:5 i.e. b = 2/5
-Resultant mixture: Milk: Water = 1:1 i.e. Milk:Total = 1:2 i.e. c = 1/2
-Ratio of Mixture-1:Mixture-2 used = a – c : c – b (Using the formula of alligations)= 5:4
-
-A.3 Draw the tree diagram. 17   
-A.4  a) We assume four boxes; one for each suit. Using the
-generalized pigeonhole principle, at least one box contains at least
-⌈N/4⌉ cards. At least three cards of one suit are selected if ⌈N/4⌉
-≥3. The smallest integer N such that ⌈N/4⌉ ≥3 is N
-= 2 · 4 + 1 = 9.
- b) A deck contains 13 hearts and 39 cards which are not hearts. So, if we
-select 41 cards, we may have 39 cards which are not hearts along with 2
-hearts. However, when we select 42 cards, we must have at least three
-hearts. (Note that the generalized pigeonhole principle is not used here.)
-
-A.5 C(4+6-1, 6) = C(9,6) = 84.
-
-A.6 https://www.hitbullseye.com/Time-and-Work-Problems.php
- 
-
- 
