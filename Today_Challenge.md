@@ -1,47 +1,55 @@
-Q. The probability that item an item at location A is 0.6, and 0.8 at location B. What is the probability that item would be found on Amazon website? 
-```
-P(A or B) = P(A) + P(B) — P(A and B)
-P(A or B) = 0.6 + 0.8 - (0.6*0.8)
-P(A or B) = 0.92
-```
-
-Q: What is boosting?  
-Boosting is an ensemble method to improve a model by reducing its bias and variance, ultimately converting weak learners to strong learners. The general idea is to train a weak learner and sequentially iterate and improve the model by learning from the previous learner. 
 
 
-Q. Lists are for homogeneous data and tuples are for heterogeneous data… why?
-https://stackabuse.com/lists-vs-tuples-in-python/
+1. Let the sample space be the set of all positive integers. Is it possible to have a “uniform" probability law, that is, a probability law that assigns the same probability  𝑐  to each positive integer?
+2. Let the sample space be the two-dimensional plane. For any real number  𝑥 , let  𝐴𝑥  be the subset of the plane that consists of all points of the vertical line through the point  (𝑥,0) , i.e.,  𝐴𝑥={(𝑥,𝑦):𝑦∈Re} .
 
----
+a) Do the axioms of probability theory imply that the probability of the union of the sets  𝐴𝑥  (which is the whole plane) is equal to the sum of the probabilities  𝐏(𝐴𝑥) ?
+b)  Do the axioms of probability theory imply that
 
-Q. Describe Tree, SVM and Random forest. Talk about their advantage and disadvantages.  
-A. *Decision Trees*: a tree-like model used to model decisions based on one or more conditions.  
-Pros: easy to implement, intuitive, handles missing values  
-Cons: high variance, inaccurate  
-*Support Vector Machines*: a classification technique that finds a hyperplane or a boundary between the two classes of data that maximizes the margin between the two classes. There are many planes that can separate the two classes, but only one plane can maximize the margin or distance between the classes.  
-Pros: accurate in high dimensionality  
-Cons: prone to over-fitting, does not directly provide probability estimates  
-*Random Forests*: an ensemble learning technique that builds off of decision trees. Random forests involve creating multiple decision trees using bootstrapped datasets of the original data and randomly selecting a subset of variables at each step of the decision tree. The model then selects the mode of all of the predictions of each decision tree.  
-Pros: can achieve higher accuracy, handle missing values, feature scaling not required, can determine feature importance.  
-Cons: black box, computationally intensive
+𝐏(𝐴1∪𝐴2∪⋯)=∑𝑥=1∞𝐏(𝐴𝑥)?
+(In other words, we consider only those lines for which the  𝑥  coordinate is a positive integer.)
+ 
+3. Mary and Tom park their cars in an empty parking lot with  n≥2  consecutive parking spaces (i.e,  n  spaces in a row, where only one car fits in each space). Mary and Tom pick parking spaces at random; of course, they must each choose a different space. (All pairs of distinct parking spaces are equally likely.) What is the probability that there is at most one empty parking space between them? 
+4. Romeo and Juliet have a date at a given time, and each will arrive at the meeting place with a delay between 0 and 1 hour, with all pairs of delays being “equally likely," that is, according to a uniform probability law on the unit square. The first to arrive will wait for 15 minutes and will leave if the other has not arrived. What is the probability that they will meet? Instead of calculating given that they arrive within
+15 minutes of each other, what is the probability that
+they'll meet, let's say that Romeo really wants to meet up
+with Juliet, and he wants to assure himself a least, say, a
+90% chance of meeting Juliet.
+Then you can ask, if he wants to have at least a 90% chance
+of meeting her, how long should he be willing to wait?
+5. Alice and Bob each choose at random a real number between zero and one. We assume that the pair of numbers is chosen according to the uniform probability law on the unit square, so that the probability of an event is equal to its area.
+We define the following events:
 
-
-Q. What is CNN ?  
-A. A CNN consists of followings:
-* Input layer
-* Conv + Activation Layer
-* MaxPooling
-* Full Connected layer
-* Activation         
-https://towardsdatascience.com/mnist-handwritten-digits-classification-using-a-convolutional-neural-network-cnn-af5fafbc35e9
-
-https://www.quora.com/What-is-a-convolutional-neural-network
-
-Q. 
+ 	 A 	 = 	 {The magnitude of the difference (for any two real numbers x and y, the value |x−y|) of the two numbers is greater than 1/3} 	 	 
+ 	 B 	 = 	 {At least one of the numbers is greater than 1/4} 	 	 
+ 	 C 	 = 	 {The sum of the two numbers is 1} 	 	 
+ 	 D 	 = 	 {Alice's number is greater than 1/4}
 
 
 
 
 
+### Solutions
+1. Suppose that  𝑐=0 . Then, by countable additivity,
+1=𝐏(Ω)=𝐏({1}∪{2}∪{3}⋯)=𝐏({1})+𝐏({2})+𝐏({3})+⋯=0+0+0+⋯=0, 
+which is a contradiction.
+Suppose that  𝑐>0 . Then, there exists an integer  𝑘  such that  𝑘𝑐>1 . By additivity,
+𝐏({1,2,…,𝑘})=𝑘𝑐>1, 
+which contradicts the normalization axiom.
 
-## Solution
+2. a) The collection of sets  𝐴𝑥  is not countable because the set of real numbers is not countable (i.e., cannot be arranged in a sequence), and so the additivity axiom does not apply.
+
+b) The countable additivity axiom applies because we are dealing with a sequence (in particular, a countable collection) of disjoint events.
+
+3. Part of EDX probability problems unit 1. The sample space is  Ω={(i,j):i≠j,1≤i,j≤n} , where outcome  (i,j)  indicates that Mary and Tom parked in slots  i  and  j , respectively. We apply the discrete uniform probability law to find the required probability. We are interested in the probability of the event
+
+A={(i,j)∈Ω:|i−j|≤2}. 
+ 
+We first find the cardinality of  Ω . There are  n2  pairs  (i,j) , but since the set  Ω  excludes outcomes of the form  (i,i) , the cardinality of  Ω  is  n2−n=n(n−1) .
+If n≥3, event A consists of the four lines indicated in the figure above and contains 2(n−1)+2(n−2)=4n−6 elements. If n=2, event A contains exactly 2 elements, namely, (1,2) and (2,1), which agrees with the formula 4(2)−6=2. Therefore,
+
+P(A)=4n−6/n(n−1).
+
+4. Discrete = 13/25 Continuous Case = 7/16
+5. P(A)=2⋅(2/3)22=4/9.
+6. 
