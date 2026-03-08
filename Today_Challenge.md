@@ -1,38 +1,255 @@
+Q. Given a number n, return the number of lists of consecutive positive integers that sum up to n.
+For example, for n = 9, you should return 3 since the lists are: [2, 3, 4], [4, 5], and [9]. Can you do it in linear time?
+
+A. This is tricky problem. Search on leetcode for the solution
+
+
+Q. This problem was asked by Stripe.
+
+Write a program to generate the partitions for a number n. A partition for n is a list of positive integers that sum up to n. For example: if n = 4, we want to return the following partitions: [1,1,1,1], [1,1,2], [2,2], [1,3], and [4]. Note that a partition [1,3] is the same as [3,1] so only the former is included.
+
+Q. why do we use defaultdict?  
+A. A common problem that you can face when working with Python dictionaries is to try to access or modify keys that don’t exist in the dictionary. This will raise a KeyError and break up your code execution. To handle these kinds of situations, the standard library provides the Python defaultdict type, a dictionary-like class that’s available for you in collections.  
+The Python defaultdict type behaves almost exactly like a regular Python dictionary, but if you try to access or modify a missing key, then defaultdict will automatically create the key and generate a default value for it. This makes defaultdict a valuable option for handling missing keys in dictionaries.
+```
+# Defining a dict 
+d = defaultdict(list) 
+def_dict['one'] = 1  # Add a key-value pair
+def_dict['missing']  # Access a missing key returns an empty list
+def_dict['another_missing'].append(4)  # Modify a missing key
+
+# Defining the dict 
+# The default value is 0 
+d = defaultdict(int) 
+a_dct = defaultdict(float)   # The Default Value is "0.0"
+a_dct = defaultdict(str)   # The Default Value is ""
+
+# dict with lambda func which returns 100
+d = defaultdict(lambda : 100)
+ ```
+Q. Given a function with inputs — an array with N randomly sorted numbers, and an int K, return output in an array with the K largest numbers.
+
+Q. check empty list  
+```
+if not list:
+    print('its empty')
+
+```
+
+Q. Asked by Paytm. You have been given two metrics. Write a code to identify if thet are symmetric metrics.  
+A. My soln. Need to refine
+``` 
+mat = np.matrix(2,3,1)
+flag = 0
+for i in range(2,mat.shape[0]):
+    for j in range(1,mat.shape[0]):
+        if mat[i][j] = mat[j][i]:
+            print()
+            flag = 1
+        else:
+            flag =0
+            print('not symmetric')
+        
+if flag == 1:
+    print('symmetric')        
+``` 
+
+Q. Asked by Delhivery. Write a programme to write factorial. Implement both recursion and dynamic programming soln.
+
+Q. Paytm. Count digit's(0-9) occurence in numbers from 1 to 100.  
+```
+store_num = []
+for i in range(1,101):
+    store_num.extend(list(str(i)))
+#     list(str(i))
+Counter(store_num)
+```
+
+Q. Ericsson. Write a programme to check two sorted array to merge into one. Just a simple idea.
+```
+# A
+# B
+
+# C= []
+# i = 0
+# j = 0
+
+for k in range(len(A+B)):
+    if A[i] <= B[j]:
+        C[k] = A[i]
+        i= i+1
+    else:
+        C[k] = B[j]
+        j = j+1
+
+    if len(A) <= i:
+        C.append(B[j+1:])
+    if len(B) <= j:
+        C.append(A[i+1:])     
+```
+
+Q. Ericsson. estimate the value of pi to the closest approximate value, you can use random number generator function as many times as required.   
+https://www.geeksforgeeks.org/estimating-value-pi-using-monte-carlo/
+
+Q. Design a parking system for airport, there are fixed no of slots for each type of vehicle and each #vehicle has a type and number. The amount charged is based on price per type per min. So when a #vehicle enters, it plate number is noted and if there is an available slot for that vehicle its #allowed to be parked.?
+
+Q. There are 100 ropes in a bag. In each step, two rope ends are picked at random, tied together and put back into a bag. The process is repeated until there are no free ends.
+What is the expected number of loops at the end of the process?   
+A. https://math.stackexchange.com/questions/2209/expected-number-of-loops
+
+```
+import numpy as np
+import random 
 
 
 
-### Fraud Prediction
-There are many approaches to determining whether a particular transaction is fraudulent. From rule based systems to machine learning models — each method tends to work best under certain conditions. Successful anti-fraud systems should reap the benefits of all the approaches and utilize them where they fit the problem best.  
-We can start with connection analysis using txn analysis. Each transaction can be described by a set of attributes.The processed txn shares an IP address, email address and some cookies with several other successfull txn.In short, it’s all about connecting transactions using some attribute as a matching key. This approach, although simple in principle, provides valuable context. After extracting the network’s features, we can then feed them to rule based systems or ML models  
-it’s quite rare for people to possess a great number of credit cards, this type of network might be an example of carding fraud. In such attacks, fraudsters use stolen credit card credentials to perform numerous transactions. We can distinguish between normal traffic and carding patterns (few people, numerous cards and transactions) easily when having data structured as a network. After querying our graph and encountering a risky pattern, we can add suspicious attribute values to blacklists.   
-there are no hard rules about what is and what is not fraudulent behavior. If we can see multiple transactions coming out of a common IP address it can mean a fraud attack, but it can also mean employees using their corporate, proxied network to make purchases. It’s important to take as many factors in as possible — missing out on some may cause serious distortions in the way we perceive the data through our networks. A good example of a crucial factor is time — someone making a 10th transaction on the same day and cleaning browser cookies after each one will look exactly the same as a legitimate user making a 10th purchase in the same year, whose cookies naturally expire between consequent transactions. Context is everything.
-Summary:
-how connection analysis is used in fraud detection and what are the associated benefits & challenges
-how to interpret networks in the context of catching fraud
-how transactions’ attributes are used to organize data into networks
-how to implement attribute matching in Python’s Networkx library
+# print(random.randint(1,200))
+l = {}
+last_end = 0
+loop = 0
 
-   
+num_list=list(range(0,200))
+
+print(random.choices(num_list,k=2))
+
+last_end,last_str = 0,0
+m =0
+for i in range(1,101):
+  # endp=random.randint(1,200)
+  # strp=random.randint(1,200)
+  ends=random.sample(num_list,k=2)
+  
+
+  print(ends)
+  num_list.remove(ends[0])
+  num_list.remove(ends[1])
+
+  if last_str in ends and last_end in ends:
+    print('was here')
+    loop = loop+1
+
+  elif last_str in ends or last_end in ends:
+    if   last_str in ends:
+      l[m]=[last_str,last_end]
 
 
-### Malicious/Fishing Prediction    
 
 
-### Anomaly Detection
 
-Before getting started, it is important to establish some boundaries on the definition of an anomaly. Anomalies can be broadly categorized as:
+  if ends[0] % 2 == 0:
+    last_str = ends[0]-1
+  else:
+    last_str = ends[0]+1
 
-Point anomalies: A single instance of data is anomalous if it's too far off from the rest. Business use case: Detecting credit card fraud based on "amount spent."
-Contextual anomalies: The abnormality is context specific. This type of anomaly is common in time-series data. Business use case: Spending $100 on food every day during the holiday season is normal, but may be odd otherwise.
-Collective anomalies: A set of data instances collectively helps in detecting anomalies. Business use case: Someone is trying to copy data form a remote machine to a local host unexpectedly, an anomaly that would be flagged as a potential cyber attack.
-Best steps to prevent anomalies is to implement policies or checks that can catch them during the data collection stage. Unfortunately, you do not often get to collect your own data, and often the data you're mining was collected for another purpose. About 68% of all the data points are within one standard deviation from the mean. About 95% of the data points are within two standard deviations from the mean. Finally, over 99% of the data is within three standard deviations from the mean. When the value deviate too much from the mean, let’s say by ± 4σ, then we can considerate this almost impossible value as anomaly. (This limit can also be calculated using the percentile).
 
-Statistical methods
-Statistically based anomaly detection uses this knowledge to discover outliers. A dataset can be standardized by taking the z-score of each point. A z-score is a measure of how many standard deviations a data point is away from the mean of the data. Any data-point that has a z-score higher than 3 is an outlier, and likely to be an anomaly. As the z-score increases above 3, points become more obviously anomalous. A z-score is calculated using the following equation. A box-plot is perfect for this application.
+  if ends[1] % 2 == 0:
+    last_end = ends[1]-1
+  else:
+    last_end = ends[1]+1
 
-Metric method
-Judging by the number of publications, metric methods are the most popular methods among researchers. They postulate the existence of a certain metric in the space of objects, which helps to find anomalies. Intuitively, the anomaly has few neighbors in the instannce space, and a typical point has many. Therefore, a good measure of anomalies can be, for example, the «distance to the k-th neighbor». (See method: Local Outlier Factor). Specific metrics are used here, for example Mahalonobis distance. Mahalonobis distance is a measure of distance between vectors of random variables, generalizing the concept of Euclidean distance. Using Mahalonobis distance, it is possible to determine the similarity of unknown and known samples. It differs from Euclidean distance in that it takes into account correlations between variables and is scale invariant. alt text
 
-The most common form of clustering-based anomaly detection is done with prototype-based clustering.
+  l[m]=[last_str,last_end]
+  m= m+1
+    
+    
 
-Using this approach to anomaly detection, a point is classified as an anomaly if its omission from the group significantly improves the prototype, then the point is classified as an anomaly. This logically makes sense. K-means is a clustering algorithm that clusters similar points. The points in any cluster are similar to the centroid of that cluster, hence why they are members of that cluster. If one point in the cluster is so far from the centroid that it pulls the centroid away from it's natural center, than that point is literally an outlier, since it lies outside the natural bounds for the cluster. Hence, its omission is a logical step to improve the accuracy of the rest of the cluster. Using this approach, the outlier score is defined as the degree to which a point doesn't belong to any cluster, or the distance it is from the centroid of the cluster. In K-means, the degree to which the removal of a point would increase the accuracy of the centroid is the difference in the SSE, or standard squared error, or the cluster with and without the point. If there is a substantial improvement in SSE after the removal of the point, that correlates to a high outlier score for that point. More specifically, when using a k-means clustering approach towards anomaly detection, the outlier score is calculated in one of two ways. The simplest is the point's distance from its closest centroid. However, this approach is not as useful when there are clusters of differing densities. To tackle that problem, the point's relative distance to it's closest centroid is used, where relative distance is defined as the ratio of the point's distance from the centroid to the median distance of all points in the cluster from the centroid. This approach to anomaly detection is sensitive to the value of k. Also, if the data is highly noisy, then that will throw off the accuracy of the initial clusters, which will decrease the accuracy of this type of anomaly detection. The time complexity of this approach is obviously dependent on the choice of clustering algorithm, but since most clustering algorithms have linear or close to linear time and space complexity, this type of anomaly detection can be highly efficient.
+  # last_str = ends[0]
+  # last_end = ends[1]
+
+print(loop)
+
+```
+
+
+Q. 
+
+
+Q. Check permutation of string can become a palindrome?  
+Q. 
+
+'''
+Given a sorted integer array nums, where the range of elements are in the inclusive range [lower, upper]
+ return its missing ranges.
+
+    Example:
+
+    Input: nums = [0, 1, 3, 50, 75], lower = 0 and upper = 99,
+    Output: ["2", "4->49", "51->74", "76->99"]
+'''
+
+
+
+def append_elem(lst, out):
+  #print(lst)
+  if len(lst) == 0:
+    pass
+  elif len(lst) == 1:
+      out.append(lst[0])
+  else:
+    out.append('{0}->{1}'.format(min(lst), max(lst)))
+    
+  #print(out)
+  return out
+
+
+def missing_num_2(a, l, u):
+  output = []
+  tmp_lst = []
+  
+  for i in range(l, u+1):
+    #print(i)
+    if i not in a:
+      #print(i)
+      tmp_lst.append(i)
+    else:
+      #print(tmp_lst)
+      output = append_elem(tmp_lst, output)
+      tmp_lst = []
+        
+  if len(tmp_lst) != 0:
+    output = append_elem(tmp_lst, output)
+    
+  return output
+
+
+
+print(missing_num_2([0, 1, 3, 50, 75],0,99) )   
+
+'''
+def missing_num(a,l,u):
+  b = []
+  for i in range(l,len(a)):
+    if a[i] == l:
+      l=l+1
+      continue
+    else:
+      
+          #     if i+1 == len(a):
+          # r='{}->{}'.format(l,a[i+1]-1)
+          # # print(r)
+          # b.append(r)
+          
+          # return b
+      
+      if a[i+1] != (l+1):
+        r='{}->{}'.format(l,a[i+1]-1)
+        # print(r)
+        b.append(r)
+        
+      else:  
+        b.append(str(l))
+      l = l+1
+  
+  return b
+       
+
+print(missing_num([0, 1, 3, 50, 75],0,99) )      '''
+
+
+
+
+
+
+
+### Solutions
+
