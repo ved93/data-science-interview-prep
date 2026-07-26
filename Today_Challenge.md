@@ -1,38 +1,55 @@
 
 
+1. Let the sample space be the set of all positive integers. Is it possible to have a “uniform" probability law, that is, a probability law that assigns the same probability  𝑐  to each positive integer?
+2. Let the sample space be the two-dimensional plane. For any real number  𝑥 , let  𝐴𝑥  be the subset of the plane that consists of all points of the vertical line through the point  (𝑥,0) , i.e.,  𝐴𝑥={(𝑥,𝑦):𝑦∈Re} .
 
-### Fraud Prediction
-There are many approaches to determining whether a particular transaction is fraudulent. From rule based systems to machine learning models — each method tends to work best under certain conditions. Successful anti-fraud systems should reap the benefits of all the approaches and utilize them where they fit the problem best.  
-We can start with connection analysis using txn analysis. Each transaction can be described by a set of attributes.The processed txn shares an IP address, email address and some cookies with several other successfull txn.In short, it’s all about connecting transactions using some attribute as a matching key. This approach, although simple in principle, provides valuable context. After extracting the network’s features, we can then feed them to rule based systems or ML models  
-it’s quite rare for people to possess a great number of credit cards, this type of network might be an example of carding fraud. In such attacks, fraudsters use stolen credit card credentials to perform numerous transactions. We can distinguish between normal traffic and carding patterns (few people, numerous cards and transactions) easily when having data structured as a network. After querying our graph and encountering a risky pattern, we can add suspicious attribute values to blacklists.   
-there are no hard rules about what is and what is not fraudulent behavior. If we can see multiple transactions coming out of a common IP address it can mean a fraud attack, but it can also mean employees using their corporate, proxied network to make purchases. It’s important to take as many factors in as possible — missing out on some may cause serious distortions in the way we perceive the data through our networks. A good example of a crucial factor is time — someone making a 10th transaction on the same day and cleaning browser cookies after each one will look exactly the same as a legitimate user making a 10th purchase in the same year, whose cookies naturally expire between consequent transactions. Context is everything.
-Summary:
-how connection analysis is used in fraud detection and what are the associated benefits & challenges
-how to interpret networks in the context of catching fraud
-how transactions’ attributes are used to organize data into networks
-how to implement attribute matching in Python’s Networkx library
+a) Do the axioms of probability theory imply that the probability of the union of the sets  𝐴𝑥  (which is the whole plane) is equal to the sum of the probabilities  𝐏(𝐴𝑥) ?
+b)  Do the axioms of probability theory imply that
 
-   
+𝐏(𝐴1∪𝐴2∪⋯)=∑𝑥=1∞𝐏(𝐴𝑥)?
+(In other words, we consider only those lines for which the  𝑥  coordinate is a positive integer.)
+ 
+3. Mary and Tom park their cars in an empty parking lot with  n≥2  consecutive parking spaces (i.e,  n  spaces in a row, where only one car fits in each space). Mary and Tom pick parking spaces at random; of course, they must each choose a different space. (All pairs of distinct parking spaces are equally likely.) What is the probability that there is at most one empty parking space between them? 
+4. Romeo and Juliet have a date at a given time, and each will arrive at the meeting place with a delay between 0 and 1 hour, with all pairs of delays being “equally likely," that is, according to a uniform probability law on the unit square. The first to arrive will wait for 15 minutes and will leave if the other has not arrived. What is the probability that they will meet? Instead of calculating given that they arrive within
+15 minutes of each other, what is the probability that
+they'll meet, let's say that Romeo really wants to meet up
+with Juliet, and he wants to assure himself a least, say, a
+90% chance of meeting Juliet.
+Then you can ask, if he wants to have at least a 90% chance
+of meeting her, how long should he be willing to wait?
+5. Alice and Bob each choose at random a real number between zero and one. We assume that the pair of numbers is chosen according to the uniform probability law on the unit square, so that the probability of an event is equal to its area.
+We define the following events:
+
+ 	 A 	 = 	 {The magnitude of the difference (for any two real numbers x and y, the value |x−y|) of the two numbers is greater than 1/3} 	 	 
+ 	 B 	 = 	 {At least one of the numbers is greater than 1/4} 	 	 
+ 	 C 	 = 	 {The sum of the two numbers is 1} 	 	 
+ 	 D 	 = 	 {Alice's number is greater than 1/4}
 
 
-### Malicious/Fishing Prediction    
 
 
-### Anomaly Detection
 
-Before getting started, it is important to establish some boundaries on the definition of an anomaly. Anomalies can be broadly categorized as:
+### Solutions
+1. Suppose that  𝑐=0 . Then, by countable additivity,
+1=𝐏(Ω)=𝐏({1}∪{2}∪{3}⋯)=𝐏({1})+𝐏({2})+𝐏({3})+⋯=0+0+0+⋯=0, 
+which is a contradiction.
+Suppose that  𝑐>0 . Then, there exists an integer  𝑘  such that  𝑘𝑐>1 . By additivity,
+𝐏({1,2,…,𝑘})=𝑘𝑐>1, 
+which contradicts the normalization axiom.
 
-Point anomalies: A single instance of data is anomalous if it's too far off from the rest. Business use case: Detecting credit card fraud based on "amount spent."
-Contextual anomalies: The abnormality is context specific. This type of anomaly is common in time-series data. Business use case: Spending $100 on food every day during the holiday season is normal, but may be odd otherwise.
-Collective anomalies: A set of data instances collectively helps in detecting anomalies. Business use case: Someone is trying to copy data form a remote machine to a local host unexpectedly, an anomaly that would be flagged as a potential cyber attack.
-Best steps to prevent anomalies is to implement policies or checks that can catch them during the data collection stage. Unfortunately, you do not often get to collect your own data, and often the data you're mining was collected for another purpose. About 68% of all the data points are within one standard deviation from the mean. About 95% of the data points are within two standard deviations from the mean. Finally, over 99% of the data is within three standard deviations from the mean. When the value deviate too much from the mean, let’s say by ± 4σ, then we can considerate this almost impossible value as anomaly. (This limit can also be calculated using the percentile).
+2. a) The collection of sets  𝐴𝑥  is not countable because the set of real numbers is not countable (i.e., cannot be arranged in a sequence), and so the additivity axiom does not apply.
 
-Statistical methods
-Statistically based anomaly detection uses this knowledge to discover outliers. A dataset can be standardized by taking the z-score of each point. A z-score is a measure of how many standard deviations a data point is away from the mean of the data. Any data-point that has a z-score higher than 3 is an outlier, and likely to be an anomaly. As the z-score increases above 3, points become more obviously anomalous. A z-score is calculated using the following equation. A box-plot is perfect for this application.
+b) The countable additivity axiom applies because we are dealing with a sequence (in particular, a countable collection) of disjoint events.
 
-Metric method
-Judging by the number of publications, metric methods are the most popular methods among researchers. They postulate the existence of a certain metric in the space of objects, which helps to find anomalies. Intuitively, the anomaly has few neighbors in the instannce space, and a typical point has many. Therefore, a good measure of anomalies can be, for example, the «distance to the k-th neighbor». (See method: Local Outlier Factor). Specific metrics are used here, for example Mahalonobis distance. Mahalonobis distance is a measure of distance between vectors of random variables, generalizing the concept of Euclidean distance. Using Mahalonobis distance, it is possible to determine the similarity of unknown and known samples. It differs from Euclidean distance in that it takes into account correlations between variables and is scale invariant. alt text
+3. Part of EDX probability problems unit 1. The sample space is  Ω={(i,j):i≠j,1≤i,j≤n} , where outcome  (i,j)  indicates that Mary and Tom parked in slots  i  and  j , respectively. We apply the discrete uniform probability law to find the required probability. We are interested in the probability of the event
 
-The most common form of clustering-based anomaly detection is done with prototype-based clustering.
+A={(i,j)∈Ω:|i−j|≤2}. 
+ 
+We first find the cardinality of  Ω . There are  n2  pairs  (i,j) , but since the set  Ω  excludes outcomes of the form  (i,i) , the cardinality of  Ω  is  n2−n=n(n−1) .
+If n≥3, event A consists of the four lines indicated in the figure above and contains 2(n−1)+2(n−2)=4n−6 elements. If n=2, event A contains exactly 2 elements, namely, (1,2) and (2,1), which agrees with the formula 4(2)−6=2. Therefore,
 
-Using this approach to anomaly detection, a point is classified as an anomaly if its omission from the group significantly improves the prototype, then the point is classified as an anomaly. This logically makes sense. K-means is a clustering algorithm that clusters similar points. The points in any cluster are similar to the centroid of that cluster, hence why they are members of that cluster. If one point in the cluster is so far from the centroid that it pulls the centroid away from it's natural center, than that point is literally an outlier, since it lies outside the natural bounds for the cluster. Hence, its omission is a logical step to improve the accuracy of the rest of the cluster. Using this approach, the outlier score is defined as the degree to which a point doesn't belong to any cluster, or the distance it is from the centroid of the cluster. In K-means, the degree to which the removal of a point would increase the accuracy of the centroid is the difference in the SSE, or standard squared error, or the cluster with and without the point. If there is a substantial improvement in SSE after the removal of the point, that correlates to a high outlier score for that point. More specifically, when using a k-means clustering approach towards anomaly detection, the outlier score is calculated in one of two ways. The simplest is the point's distance from its closest centroid. However, this approach is not as useful when there are clusters of differing densities. To tackle that problem, the point's relative distance to it's closest centroid is used, where relative distance is defined as the ratio of the point's distance from the centroid to the median distance of all points in the cluster from the centroid. This approach to anomaly detection is sensitive to the value of k. Also, if the data is highly noisy, then that will throw off the accuracy of the initial clusters, which will decrease the accuracy of this type of anomaly detection. The time complexity of this approach is obviously dependent on the choice of clustering algorithm, but since most clustering algorithms have linear or close to linear time and space complexity, this type of anomaly detection can be highly efficient.
+P(A)=4n−6/n(n−1).
+
+4. Discrete = 13/25 Continuous Case = 7/16
+5. P(A)=2⋅(2/3)22=4/9.
+6. 
