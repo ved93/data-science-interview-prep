@@ -1,15 +1,30 @@
+https://stellarpeers.com/blog/
+
+https://www.ycombinator.com/library/1y-key-metrics
+
+https://towardsdatascience.com/the-definitive-guide-to-designing-product-metrics-ba5d9e8e07e9
 
 
 
-## Bidgeli
-- can you separate non-linear boundaries from logistic regression. Given a circle and square?
-- Find the probability of finding x people on platform where train leaves after every 6 hours. This is for problem solving.
-- Maximise the value of coins if you are playing a game against someone. You are starting the game and coins can be any denominations and coins are placed in a row. You can only pick from one of the ends. whats your strategy?
-- there are 100 people in the circle. Everyone shoots the next person in the circle. And this continues till only one person in the circle. Who will be the last person in the circle.
 
-## Amazon
+Q. How would you design a metric to compare rankings of lists of shows for a given user?   
+A. 
+1) Develop a list of shows/movies that are representative of different taste categries 
+2) Obtain ranking of the items in the list from 2 users
+3) Use Spearman's rho (or other test that works with rankings) to assess dependence/conguence between the 2 people's rankings.
+4) Look at the mean average precision of the movies that the users watch out of the rankings. So if out of 10 recommended movies one user prefers the third and the other user prefers the sixth, the recommendation engine of the user who preferred the third would be better. 
 
-## Oracle
 
-## Microsoft
+
+Q. How can you decide how long to run an experiment? What are some problems with just using a fixed p-value threshold and how do you work around them?   
+A. https://www.optimizely.com/sample-size-calculator/
+
+https://www.experimentcalculator.com/
+
+https://help.optimizely.com/Analyze_Results/How_long_to_run_an_experiment
+
+Q. Uber. You’re on the data science team and are responsible for figuring out surge pricing. Why does it need to exist and what metrics and data should you track?   
+A. It needs to exist to balance the demand-supply  
+ equation. Surge pricing motivates driver to go the   surge areas hence results in balancing the supply in high demand area. We need to track conversions in surge price points.
+
 
