@@ -1,38 +1,68 @@
 
+Q. Assume we have a classifier that produces a score between 0 and 1 for the probability of a particular loan application being fraudulent. In this scenario: a) what are false positives, b) what are false negatives, and c) what are the trade-offs between them in terms of dollars and how should the model be weighted accordingly?
+
+A. FP: False predicted fraudulent
+FN: Falsely predicted Non-fraud
+Here, Recall is very important metric here. So model should be weighted for FN. FN are the cases where fraud actually happened but model didn't detect and Bank ended up losing money. So we should choose a model where we can minimise FN at the expense of FP.
+
+Q. Why lasso makes coeficients zero?  
+*Explains Ghraphically*
+https://www.quora.com/Why-is-it-that-the-lasso-unlike-ridge-regression-results-in-coefficient-estimates-that-are-exactly-equal-to-zero
+*Explains Mathematically*
+https://stats.stackexchange.com/questions/176599/why-will-ridge-regression-not-shrink-some-coefficients-to-zero-like-lasso
 
 
-### Fraud Prediction
-There are many approaches to determining whether a particular transaction is fraudulent. From rule based systems to machine learning models — each method tends to work best under certain conditions. Successful anti-fraud systems should reap the benefits of all the approaches and utilize them where they fit the problem best.  
-We can start with connection analysis using txn analysis. Each transaction can be described by a set of attributes.The processed txn shares an IP address, email address and some cookies with several other successfull txn.In short, it’s all about connecting transactions using some attribute as a matching key. This approach, although simple in principle, provides valuable context. After extracting the network’s features, we can then feed them to rule based systems or ML models  
-it’s quite rare for people to possess a great number of credit cards, this type of network might be an example of carding fraud. In such attacks, fraudsters use stolen credit card credentials to perform numerous transactions. We can distinguish between normal traffic and carding patterns (few people, numerous cards and transactions) easily when having data structured as a network. After querying our graph and encountering a risky pattern, we can add suspicious attribute values to blacklists.   
-there are no hard rules about what is and what is not fraudulent behavior. If we can see multiple transactions coming out of a common IP address it can mean a fraud attack, but it can also mean employees using their corporate, proxied network to make purchases. It’s important to take as many factors in as possible — missing out on some may cause serious distortions in the way we perceive the data through our networks. A good example of a crucial factor is time — someone making a 10th transaction on the same day and cleaning browser cookies after each one will look exactly the same as a legitimate user making a 10th purchase in the same year, whose cookies naturally expire between consequent transactions. Context is everything.
-Summary:
-how connection analysis is used in fraud detection and what are the associated benefits & challenges
-how to interpret networks in the context of catching fraud
-how transactions’ attributes are used to organize data into networks
-how to implement attribute matching in Python’s Networkx library
 
-   
+---
+Q. Assume we have some credit model, which has accurately calibrated (up to some error) score of how credit-worthy any individual person is. For example, if the model’s estimate is 92% then we can assume the actual score is between 91 and 93. If we take 92 as a score cutoff and deem everyone above that score as credit-worthy, are we over-estimating or underestimating the actual population’s credit score?
+
+A. 
+
+---
+Q. What is user churn and how can you build a model to predict whether a user will churn? What features would you include in the model and how do you assess importance?
+
+---
+Q. Assume we have a classifier that produces a score between 0 and 1 for the probability of a particular loan application behind a fraud. Say that for each application’s score, we take the square root of that score. How would the ROC curve change? If it doesn’t change, what kinds of functions would change the curve?
+
+A. ROC is a ranking metrics so it wont change if you make same transformation for every score.
+
+---
+
+Q.Difference between convex and non-convex cost function; what does it mean when a cost function is non-convex?(Amazon)  
+
+Q. Describe the criterion for a particular model selection. Why is dimension reduction important?
+
+Q.What are the assumptions for logistic and linear regression?
+
+Q.If you can build a perfect (100% accuracy) classification model to predict some customer behaviour, what will be the problem in application?  
+A. There can be multiple scenarios  
+1. target-rate < 1% : If its fraud application. Then model might of no use.
+2. Overfitting: It's highly difficult to build such model. So if its not validated well then it might not do well on test data
+
+Q. Compare Lasso and Ridge Regression. (Amazon) 
+Q. What’s the difference between MLE and MAP inference?(Amazon)  
+Q. When users are navigating through the Amazon website, they are performing several actions. What is the best way to model if their next action would be a purchase?  
+Q.How does K-means work? What kind of distance metric would you choose? What if different features have different dynamic range?
+Q. What are some benefits and drawbacks of discriminative and generative models?  
+Q. Difference between convex and non-convex cost function ; what does it mean when a cost function is non-convex?  
+A. Convex: global optimum no local optimum
+
+Q. why should we retrain the model after model selection / model evaluation?   
+In a learning curve, the performance of a model both on the training and validation set is plotted as a function of the training set size. Fig. 1 shows a typical learning curve: The training score (performance on the training set) decreases with increasing training set size while the validation score increases at the same time. High training score and low validation score at the same time indicates that the model has overfit the data, i.e., has adapted too well to the specific training set samples. As the training set increases, overfitting decreases, and the validation score increases.
+Especially for data-hungry machine learning models, the learning curve might not yet have reached a plateau at the given training set size, which means the generalization error might still decrease when providing more data to the model. Hence, it seems reasonable to increase the training set (by adding the validation set) before estimating the generalization error on the test set, and to further take advantage of the test set data for model fitting before shipping the model. Whether or not this strategy is needed depends strongly on the slope of the learning curve at the initial training set size.
+
+Q. Bias Variance in Learning Curve  
+A. Learning curves further allow to easily illustrate the concept of (statistical) bias and variance. Bias in this context refers to erroneous (e.g. simplifying) model assumptions, which can cause the model to underfit the data. A high-bias model does not adequately capture the structure present in the data. Variance on the other hand quantifies how much the model varies as we change the training data. A high-variance model is very sensitive to small fluctuations in the training data, which can cause the model to overfit. The amount of bias and variance can be estimated using learning curves: A model exhibits high variance, but low bias if the training score plateaus at a high level while the validation score at a low level, i.e., if there is a large gap between training and validation score. A model with low variance but high bias, in contrast, is a model where both training and validation score are low, but similar. Very simple models are high-bias, low-variance while with increasing model complexity they become low-bias, high-variance.
+
+Q. Why is logistic regression considered a linear model?  
+A. Logistic regression is considered linear because the decision boundary of a logistic model is linear in the feature space. Logistic regression is considered a generalized linear model because the outcome always depends on the sum of the inputs and parameters. Or in other words, the output cannot depend on the product (or quotient, etc.) of its parameters!  
+Logistic regression is a *generalized linear model*. Generalized linear models are, despite their name, not generally considered linear models. They have a linear component, but the model itself is nonlinear due to the nonlinearity introduced by the link function.
+
+Q. You have a dataset of a million example digits, what are some desirable qualities due to which you would pick a KNN classifier for digit recognition ?  
+A. Lavanya.The following are some features of the KNN classifier The KNN classifier is simple to implement. Prediction could be relatively inefficient with the KNN classifier. While there is no training effort with the KNN algorithm, prediction involves scanning the entire training data to find the K-nearest neighbours to aggregate their value. With efficient implementation, such as a KD-tree the prediction time could be improved. With a high value of K, the decision boundary becomes smoother while the decision boundary is more noisy with a low value of K. The KNN-algorithm is non-parametric and can fit highly non-linear decision boundaries.
+
+Q. Bias-variance trade-off in MSE
+
+A. https://www.countbayesie.com/blog/2019/1/30/a-deeper-look-at-mean-squared-error
 
 
-### Malicious/Fishing Prediction    
-
-
-### Anomaly Detection
-
-Before getting started, it is important to establish some boundaries on the definition of an anomaly. Anomalies can be broadly categorized as:
-
-Point anomalies: A single instance of data is anomalous if it's too far off from the rest. Business use case: Detecting credit card fraud based on "amount spent."
-Contextual anomalies: The abnormality is context specific. This type of anomaly is common in time-series data. Business use case: Spending $100 on food every day during the holiday season is normal, but may be odd otherwise.
-Collective anomalies: A set of data instances collectively helps in detecting anomalies. Business use case: Someone is trying to copy data form a remote machine to a local host unexpectedly, an anomaly that would be flagged as a potential cyber attack.
-Best steps to prevent anomalies is to implement policies or checks that can catch them during the data collection stage. Unfortunately, you do not often get to collect your own data, and often the data you're mining was collected for another purpose. About 68% of all the data points are within one standard deviation from the mean. About 95% of the data points are within two standard deviations from the mean. Finally, over 99% of the data is within three standard deviations from the mean. When the value deviate too much from the mean, let’s say by ± 4σ, then we can considerate this almost impossible value as anomaly. (This limit can also be calculated using the percentile).
-
-Statistical methods
-Statistically based anomaly detection uses this knowledge to discover outliers. A dataset can be standardized by taking the z-score of each point. A z-score is a measure of how many standard deviations a data point is away from the mean of the data. Any data-point that has a z-score higher than 3 is an outlier, and likely to be an anomaly. As the z-score increases above 3, points become more obviously anomalous. A z-score is calculated using the following equation. A box-plot is perfect for this application.
-
-Metric method
-Judging by the number of publications, metric methods are the most popular methods among researchers. They postulate the existence of a certain metric in the space of objects, which helps to find anomalies. Intuitively, the anomaly has few neighbors in the instannce space, and a typical point has many. Therefore, a good measure of anomalies can be, for example, the «distance to the k-th neighbor». (See method: Local Outlier Factor). Specific metrics are used here, for example Mahalonobis distance. Mahalonobis distance is a measure of distance between vectors of random variables, generalizing the concept of Euclidean distance. Using Mahalonobis distance, it is possible to determine the similarity of unknown and known samples. It differs from Euclidean distance in that it takes into account correlations between variables and is scale invariant. alt text
-
-The most common form of clustering-based anomaly detection is done with prototype-based clustering.
-
-Using this approach to anomaly detection, a point is classified as an anomaly if its omission from the group significantly improves the prototype, then the point is classified as an anomaly. This logically makes sense. K-means is a clustering algorithm that clusters similar points. The points in any cluster are similar to the centroid of that cluster, hence why they are members of that cluster. If one point in the cluster is so far from the centroid that it pulls the centroid away from it's natural center, than that point is literally an outlier, since it lies outside the natural bounds for the cluster. Hence, its omission is a logical step to improve the accuracy of the rest of the cluster. Using this approach, the outlier score is defined as the degree to which a point doesn't belong to any cluster, or the distance it is from the centroid of the cluster. In K-means, the degree to which the removal of a point would increase the accuracy of the centroid is the difference in the SSE, or standard squared error, or the cluster with and without the point. If there is a substantial improvement in SSE after the removal of the point, that correlates to a high outlier score for that point. More specifically, when using a k-means clustering approach towards anomaly detection, the outlier score is calculated in one of two ways. The simplest is the point's distance from its closest centroid. However, this approach is not as useful when there are clusters of differing densities. To tackle that problem, the point's relative distance to it's closest centroid is used, where relative distance is defined as the ratio of the point's distance from the centroid to the median distance of all points in the cluster from the centroid. This approach to anomaly detection is sensitive to the value of k. Also, if the data is highly noisy, then that will throw off the accuracy of the initial clusters, which will decrease the accuracy of this type of anomaly detection. The time complexity of this approach is obviously dependent on the choice of clustering algorithm, but since most clustering algorithms have linear or close to linear time and space complexity, this type of anomaly detection can be highly efficient.
