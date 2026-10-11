@@ -1,55 +1,83 @@
 
 
-1. Let the sample space be the set of all positive integers. Is it possible to have a “uniform" probability law, that is, a probability law that assigns the same probability  𝑐  to each positive integer?
-2. Let the sample space be the two-dimensional plane. For any real number  𝑥 , let  𝐴𝑥  be the subset of the plane that consists of all points of the vertical line through the point  (𝑥,0) , i.e.,  𝐴𝑥={(𝑥,𝑦):𝑦∈Re} .
+Q. How can you decide how long to run an experiment? What are some problems with just using a fixed p-value threshold and how do you work around them?
 
-a) Do the axioms of probability theory imply that the probability of the union of the sets  𝐴𝑥  (which is the whole plane) is equal to the sum of the probabilities  𝐏(𝐴𝑥) ?
-b)  Do the axioms of probability theory imply that
+A. There are few ways to answer this question:
 
-𝐏(𝐴1∪𝐴2∪⋯)=∑𝑥=1∞𝐏(𝐴𝑥)?
-(In other words, we consider only those lines for which the  𝑥  coordinate is a positive integer.)
- 
-3. Mary and Tom park their cars in an empty parking lot with  n≥2  consecutive parking spaces (i.e,  n  spaces in a row, where only one car fits in each space). Mary and Tom pick parking spaces at random; of course, they must each choose a different space. (All pairs of distinct parking spaces are equally likely.) What is the probability that there is at most one empty parking space between them? 
-4. Romeo and Juliet have a date at a given time, and each will arrive at the meeting place with a delay between 0 and 1 hour, with all pairs of delays being “equally likely," that is, according to a uniform probability law on the unit square. The first to arrive will wait for 15 minutes and will leave if the other has not arrived. What is the probability that they will meet? Instead of calculating given that they arrive within
-15 minutes of each other, what is the probability that
-they'll meet, let's say that Romeo really wants to meet up
-with Juliet, and he wants to assure himself a least, say, a
-90% chance of meeting Juliet.
-Then you can ask, if he wants to have at least a 90% chance
-of meeting her, how long should he be willing to wait?
-5. Alice and Bob each choose at random a real number between zero and one. We assume that the pair of numbers is chosen according to the uniform probability law on the unit square, so that the probability of an event is equal to its area.
-We define the following events:
+1. Keep running your experiment till you get 90%-95% statistical significance.
+2. calculate effect size for your experiment using tools like [optimizely](https://www.optimizely.com/sample-size-calculator/), [experimentcalculator](https://www.experimentcalculator.com/) 
+3. Atleast have 1000 conversions
 
- 	 A 	 = 	 {The magnitude of the difference (for any two real numbers x and y, the value |x−y|) of the two numbers is greater than 1/3} 	 	 
- 	 B 	 = 	 {At least one of the numbers is greater than 1/4} 	 	 
- 	 C 	 = 	 {The sum of the two numbers is 1} 	 	 
- 	 D 	 = 	 {Alice's number is greater than 1/4}
+If we use just fixed p-value threshold, then it might results into p-value hacking. To work around them we can calculate effect size separately.
+
+---
+Q. A coin was flipped 1000 times, and 560 times it showed up heads. Do you think the coin is biased? Why or why not?(Google)
+
+A. The variance for # of heads in 1000 flips of a fair coin would be (0.5)(1–0.5)(1000) = 250 and the standard deviation is the square root of the variance: √250 = 15.81+. And of course the mean would be (0.5)(1000) = 500.
+
+So 560 is (560–500)/15.81 = +3.794… standard deviations.
+
+A 95% confidence interval is ±1.96 standard deviations, which would be ±30.99 or between 469.01 and 530.99. So 560 heads is a BIG outlier. The coin probably is biased.
+
+On the other hand, 56 heads in 100 trials - the same proportion with a smaller sample - would only be +1.2 standard deviations (mean is 50, standard deviation is 5.) So that would be too small of a sample to conclude that the coin is biased.
+
+---
+Q. Uber. Say you need to produce a binary classifier for fraud detection. What metrics would you look at, how is each defined, and what is the interpretation of each one?
+
+A. I have worked a bit in the fraud domain, and we definitely look at ROC AUC as our primary metric. The fact that it's not sensitive to class imbalance can be a feature, not a bug. Consider retraining models on a monthly basis, and trying to compare performance across time. PR-AUC will be driven by a combination of model performance and underlying fraud rate, whereas ROC-AUC is robust to variable fraud rate.
+
+Second, the business typically makes a decision based on the impact to good customers, or in other words, FPR. Then, the important question becomes: at this given FPR, how much of the fraud am I capturing? This is precisely what the ROC curve tells us. Also note the host said they care more about partial ROC AUC, and this is likely for the same reason: they care about very low FPR, so only the area under this section of the curve is most relevant.
+
+That said, if you instead have a model that's evaluating e.g. every hour and sending accounts for human investigation, then your primary bottle-neck is investigator bandwidth, and in this case, you might focus on Precision/Recall metrics as you will likely have a target precision.
+
+---
+Q. Facebook.Imagine the social graphs for both Facebook and Twitter. How do they differ? What metric would you use to measure how skewed the social graphs are?
+
+A. First you should recognize that Twitter is *following* vs. a FB friendship (connections are 2-way street). Second part has to do with comparing the "equality" of Twitter vs FB social graph. In TW, you have a small % with a TON of connections (and then a long tail), and FB you have a much less extreme version of that. Think how you would plot out distribution of connections per user and how FB/TW are different.
+
+---
+Q. What does it mean for an estimator to be unbiased? What about consistent? Give examples of an unbiased but not consistent estimator, as well as a biased but consistent estimator.
+
+A. https://stats.stackexchange.com/questions/31036/what-is-the-difference-between-a-consistent-estimator-and-an-unbiased-estimator
+
+---
+Q. There are two games involving dice that you can play. In the first game, you roll two die at once and get the dollar amount equivalent to the product of the rolls. In the second game, you roll one die and get the dollar amount equivalent to the square of that value. Which has the higher expected value and why?
+
+A. 
+
+---
+Q. Google. Say you are running a multiple linear regression and believe there are several predictors that are correlated. How will the results of the regression be affected if they are indeed correlated? How would you deal with this problem?
+
+A. Interpretability of coefficients wont make sense and coefficients will be unstable
+
+---
+Q. Uber.Say you are given a random Bernoulli trial generator. How would you generate values from a standard normal distribution?
+
+A.
+
+---
+Q. What are MLE and MAP? What is the difference between the two?  
+A. [Check here](https://www.quora.com/What-is-the-difference-between-Maximum-Likelihood-ML-and-Maximum-a-Posteriori-MAP-estimation)  
+
+Q. Why does gradient point the direction of steepest ascent?   
+A. https://www.khanacademy.org/math/multivariable-calculus/multivariable-derivatives/gradient-and-directional-derivatives/v/why-the-gradient-is-the-direction-of-steepest-ascent
+
+https://www.quora.com/Can-you-explain-intuitively-or-with-an-example-why-the-gradient-points-to-the-direction-of-steepest-ascent  
+https://www.quora.com/What-is-an-intuitive-explanation-for-why-the-gradient-points-in-the-direction-of-steepest-ascent  
+https://betterexplained.com/articles/vector-calculus-understanding-the-gradient/   
+https://math.stackexchange.com/questions/223252/why-is-gradient-the-direction-of-steepest-ascent
+https://www.khanacademy.org/math/multivariable-calculus/multivariable-derivatives/gradient-and-directional-derivatives/v/directional-derivative
+
+Q. what is poisson distribution?  
+A. The Poisson distribution is the discrete probability distribution of the number of events occurring in a given time period, given the average number of times the event occurs over that time period. A certain fast-food restaurant gets an average of 3 visitors to the drive-through per minute.
+The number of cases a doctor can handle in a day is a positive number, this can be modelled by a Poisson distribution.  
+*Additional notes*:
+Normal distribution can be used when we have a real number taking values between negative and positive infinity. Clearly this is not the case for the number of cases taken by a doctor per day.  
+Bernoulli distribution is used to model binary random variables, for instance the result of a coin toss. Hence, it cannot be used to model a random variable that is not binary.
 
 
+Q. You are doing an experiment to determine whether a new coffee recipe you invented, that is more healthy is actually likable by people. You want to make sure people like this coffee atleast as much as the previous coffee by looking at the average rating they give. Which kind of test would make more sense in this setting ?  
+A. If you do a two sided test, your null hypothesis will be, people like the old recipe as much as the newer recipe. If you measure the ratings and compute the p value, you will be in a position to reject the null hypothesis that people like the old recipe as much as the newer one.
 
-
-
-### Solutions
-1. Suppose that  𝑐=0 . Then, by countable additivity,
-1=𝐏(Ω)=𝐏({1}∪{2}∪{3}⋯)=𝐏({1})+𝐏({2})+𝐏({3})+⋯=0+0+0+⋯=0, 
-which is a contradiction.
-Suppose that  𝑐>0 . Then, there exists an integer  𝑘  such that  𝑘𝑐>1 . By additivity,
-𝐏({1,2,…,𝑘})=𝑘𝑐>1, 
-which contradicts the normalization axiom.
-
-2. a) The collection of sets  𝐴𝑥  is not countable because the set of real numbers is not countable (i.e., cannot be arranged in a sequence), and so the additivity axiom does not apply.
-
-b) The countable additivity axiom applies because we are dealing with a sequence (in particular, a countable collection) of disjoint events.
-
-3. Part of EDX probability problems unit 1. The sample space is  Ω={(i,j):i≠j,1≤i,j≤n} , where outcome  (i,j)  indicates that Mary and Tom parked in slots  i  and  j , respectively. We apply the discrete uniform probability law to find the required probability. We are interested in the probability of the event
-
-A={(i,j)∈Ω:|i−j|≤2}. 
- 
-We first find the cardinality of  Ω . There are  n2  pairs  (i,j) , but since the set  Ω  excludes outcomes of the form  (i,i) , the cardinality of  Ω  is  n2−n=n(n−1) .
-If n≥3, event A consists of the four lines indicated in the figure above and contains 2(n−1)+2(n−2)=4n−6 elements. If n=2, event A contains exactly 2 elements, namely, (1,2) and (2,1), which agrees with the formula 4(2)−6=2. Therefore,
-
-P(A)=4n−6/n(n−1).
-
-4. Discrete = 13/25 Continuous Case = 7/16
-5. P(A)=2⋅(2/3)22=4/9.
-6. 
+With a one sided test, the null hypothesis will be : people like the previous recipe better than the current recipe. If you are able to get an appropriate p value with the adequate sample size, you can conclude that the people do not like the previous coffee more than the current coffee. Note that you still cannot conclude that they like the new one more.
+https://stats.idre.ucla.edu/other/mult-pkg/faq/general/faq-what-are-the-differences-between-one-tailed-and-two-tailed-tests/
